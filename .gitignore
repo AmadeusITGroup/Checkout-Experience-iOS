@@ -1,0 +1,5 @@
+/DerivedData
+**/build/
+/Carthage
+.DS_Store
+xcuserdata

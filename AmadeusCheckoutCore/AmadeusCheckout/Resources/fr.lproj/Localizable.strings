@@ -1,0 +1,72 @@
+/* 
+  Localizable.strings
+  AmadeusCheckout
+
+  Created by Hela OTHMANI on 12/06/2019.
+  Copyright © 2019 Amadeus. All rights reserved.
+*/
+
+// "key" = "localized value";
+
+//LABELS
+"label_baseamount" = "Prix de base";
+"label_amount" = "Prix total";
+"label_fees" = "Frais carte de paiement";
+"label_vendor" = "Type de carte";
+"label_ccnum" = "Numéro de carte";
+"label_cardHolderName" = "Titulaire de la carte";
+"label_cardHolderNamePlaceholder" = "John Appleseed";
+"label_expirydate" = "Date d'expiration";
+"label_cvv" = "Cryptogramme visuel";
+"label_method" = "Méthode de paiement";
+"label_title" = "Paiement";
+"label_addressLine1" = "Ligne 1";
+"label_addressLine2" = "Ligne 2";
+"label_zipCode" = "Code postal";
+"label_city" = "Ville";
+"label_addressLine1Placeholder" = "Adresse";
+"label_addressLine2Placeholder" = "Complément d'adresse";
+"label_zipCodePlaceholder" = "Code postal";
+"label_cityPlaceholder" = "Ville";
+"label_country" = "Pays";
+"label_optional" = "(optionnel)";
+"label_summary" = "Récapitulatif"; // Not used
+"label_ccdetails" = "Carte de paiement";
+"label_billingAddress" = "Addresse de facturation";
+"label_loading" = "Veuillez patienter...";
+"label_obFees" = "{0} de frais s\'appliquent au total";
+"label_error" = "Erreur";
+"label_warning" = "Attention";
+"label_valid_termcondition" = "J'ai lu et j'accepte les [conditions générales]";
+"label_select_payment_method" = "Choisissez vote méthode de paiement";
+"label_scan_card" = "Scanner la carte";
+
+//PLACE HOLDERS
+"pMonth" = "Mois";
+"pYear" = "Année";
+
+//BUTTONS
+"button_back" = "Annuler";
+"button_next" = "Payer";
+"button_ok" = "OK";
+"button_retry" = "Rééssayer";
+"button_cancel_payment" = "Annuler le paiement";
+"button_continue" = "Continuer";
+"button_total" = "Total {0}";
+
+//FIELD ERRORS
+"error_field_mandatory" = "Champ obligatoire";
+"error_field_expiryDate" = "Date invalide";
+"error_field_luhn" = "Numéro de carte invalide";
+"error_field_bin" = "Ce numéro de carte ne correspond pas au type choisi";
+"error_field_cvv" = "Ce champ doit contenir {0} chiffres";
+"error_field_unsupported" = "Carte non supportée";
+"error_field_maxLength" = "La longueur maximale est {0}";
+"error_field_minLength" = "La longueur minimale est {0}";
+
+//ERRORS
+"label_error_payment" = "Le paiement a été rejeté par notre partenaire de paiement.\nVeuillez réessayer ou fournir une autre méthode de paiement.";
+"label_error_unreachable_network" = "Veuillez vérifier votre connexion internet.";
+"label_error_session_will_expire" = "Il ne vous reste plus que {0} pour terminer votre paiement.";
+"label_error_invalid_form" = "Certaines informations sont incorrectes ou manquantes";
+"label_error_term_and_conditions" = "Vous devez accepter les conditions générales";

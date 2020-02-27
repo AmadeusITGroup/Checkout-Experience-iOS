@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Cartfile">
+   </FileRef>
+   <FileRef
+      location = "group:AmadeusCheckout.podspec">
+   </FileRef>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:doc">
+   </FileRef>
+   <FileRef
+      location = "group:AmadeusCheckoutCore/AmadeusCheckout.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AmadeusCheckoutCore/../ObjcShowcase/ObjcShowcase.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AmadeusCheckoutCore/../SwiftShowcase/SwiftShowcase.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AmadeusCheckout-CardIO/AmadeusCheckout-CardIO.xcodeproj">
+   </FileRef>
+</Workspace>

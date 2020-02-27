@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  AmadeusCheckout
+
+  Created by Hela OTHMANI on 12/06/2019.
+  Copyright © 2019 Amadeus. All rights reserved.
+*/
+
+// "key" = "localized value";
+
+//LABELS
+"label_baseamount" = "Base price";
+"label_amount" = "Total amount";
+"label_fees" = "Payment card fees";
+"label_vendor" = "Card type";
+"label_ccnum" = "Card number";
+"label_cardHolderName" = "Card holder name";
+"label_cardHolderNamePlaceholder" = "John Appleseed";
+"label_expirydate" = "Expiry date";
+"label_cvv" = "Security code";
+"label_method" = "Payment method";
+"label_title" = "Payment";
+"label_addressLine1" = "Line 1";
+"label_addressLine2" = "Line 2";
+"label_zipCode" = "Post code";
+"label_city" = "City";
+"label_addressLine1Placeholder" = "Address";
+"label_addressLine2Placeholder" = "Additional address";
+"label_zipCodePlaceholder" = "Post code";
+"label_cityPlaceholder" = "City";
+"label_country" = "Country";
+"label_optional" = " (optional)";
+"label_summary" = "Trip summary"; // Not used
+"label_ccdetails" = "Card details";
+"label_billingAddress" = "Billing address";
+"label_loading" = "Please wait...";
+"label_obFees" = "{0} card fees apply to your payment";
+"label_error" = "Error";
+"label_warning" = "Warning";
+"label_valid_termcondition" = "I have read and accept the [terms and conditions]";
+"label_select_payment_method" = "Select Payment Method";
+"label_scan_card" = "Scan Credit Card";
+
+
+//PLACE HOLDERS
+"pMonth" = "Month";
+"pYear" = "Year";
+
+//BUTTONS
+"button_back" = "Cancel";
+"button_next" = "Pay";
+"button_ok" = "OK";
+"button_retry" = "Retry";
+"button_cancel_payment" = "Cancel payment";
+"button_continue" = "Continue";
+"button_total" = "Total {0}";
+
+//FIELD ERRORS
+"error_field_mandatory" = "This field is required";
+"error_field_expiryDate" = "Expiry Date is invalid";
+"error_field_luhn" = "Card number is invalid";
+"error_field_bin" = "Card number doesn't match card type";
+"error_field_cvv" = "This field must contain {0} digits";
+"error_field_unsupported" = "Unsupported card type";
+"error_field_maxLength" = "Maximum lenght is {0}";
+"error_field_minLength" = "Minimum lenght is {0}";
+
+//ERRORS
+"label_error_payment" = "The payment has been rejected by our payment partner.\nPlease try again or provide another method of payment.";
+"label_error_unreachable_network" = "Please check your network connection.";
+"label_error_session_will_expire" = "You just have {0} to complete your payment.";
+"label_error_invalid_form" = "Some required information is missing or incorrect";
+"label_error_term_and_conditions" = "You have to accept the terms and conditons";
+

@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Payment-->
+        <scene sceneID="e7J-ZB-xUP">
+            <objects>
+                <tableViewController storyboardIdentifier="payWithCreditCardContent" id="EcB-W7-huh" customClass="CreditCardViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tl9-C2-Lfr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CardVendorCell" id="xuN-aZ-Wrr" customClass="VendorTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="600" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xuN-aZ-Wrr" id="Xl9-Gn-uIG">
+                                    <rect key="frame" x="0.0" y="0.0" width="569" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vendor" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yDu-1u-TEs">
+                                            <rect key="frame" x="16" y="0.0" width="495" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="vendor"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2e-mH-hcz" customClass="BoundImageView" customModule="AmadeusCheckout" customModuleProvider="target">
+                                            <rect key="frame" x="519" y="8" width="43" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="vendorImage" destination="u2e-mH-hcz" id="05F-6w-GIc"/>
+                                    <segue destination="g43-1w-pf0" kind="show" identifier="selectVendor" id="sw4-9I-tOJ"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardNumberCell" rowHeight="66" id="M19-oN-SvS" customClass="CardNumberTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="99" width="600" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M19-oN-SvS" id="ZOJ-Zb-CId">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0000 0000 0000 0000" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="45A-Pj-CJb" customClass="BoundTextField" customModule="AmadeusCheckout" customModuleProvider="target">
+                                            <rect key="frame" x="67" y="17" width="529" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="card_number_input"/>
+                                            <color key="textColor" red="0.039215686274509803" green="0.44705882352941173" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="cc-number"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jl7-tG-bEq">
+                                            <rect key="frame" x="16" y="0.0" width="580" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="ccnum"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPV-6f-uo3" customClass="BoundImageView" customModule="AmadeusCheckout" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="38" width="29" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="inputTextField" destination="45A-Pj-CJb" id="EZM-80-kM4"/>
+                                    <outlet property="vendorImage" destination="LPV-6f-uo3" id="wJi-t2-CVC"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpiryCell" id="hrp-oH-R8D" customClass="ExpiryTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="165" width="600" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hrp-oH-R8D" id="5jd-hR-FPi">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="21"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MM/YY" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="JYh-um-dsy" customClass="BoundTextField" customModule="AmadeusCheckout" customModuleProvider="target">
+                                            <rect key="frame" x="71" y="0.0" width="525" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="expiry_input"/>
+                                            <color key="textColor" red="0.039215686270000001" green="0.44705882349999998" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Expiry" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WHb-m7-h8F">
+                                            <rect key="frame" x="16" y="0.0" width="47" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="expirydate"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="JYh-um-dsy" secondAttribute="bottom" id="8S0-Zi-bgd"/>
+                                        <constraint firstItem="JYh-um-dsy" firstAttribute="leading" secondItem="WHb-m7-h8F" secondAttribute="trailing" constant="8" id="HIf-ae-WaL"/>
+                                        <constraint firstItem="WHb-m7-h8F" firstAttribute="top" secondItem="5jd-hR-FPi" secondAttribute="top" id="KHJ-aS-85o"/>
+                                        <constraint firstItem="JYh-um-dsy" firstAttribute="top" secondItem="5jd-hR-FPi" secondAttribute="top" id="NYi-DW-432"/>
+                                        <constraint firstItem="WHb-m7-h8F" firstAttribute="leading" secondItem="5jd-hR-FPi" secondAttribute="leading" constant="16" id="UVx-R5-cFu"/>
+                                        <constraint firstAttribute="bottom" secondItem="WHb-m7-h8F" secondAttribute="bottom" id="aug-lU-Ccm"/>
+                                        <constraint firstAttribute="trailing" secondItem="JYh-um-dsy" secondAttribute="trailing" constant="4" id="bAN-pr-6BN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="expiryPicker" destination="W8C-Ur-v58" id="pDA-9r-BjK"/>
+                                    <outlet property="inputTextField" destination="JYh-um-dsy" id="ZP2-38-O2z"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CvvCell" id="a3p-6I-609" customClass="CvvTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="186" width="600" height="21.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a3p-6I-609" id="YkB-uH-JyK">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="21.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="000" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Iab-kD-llw" customClass="BoundTextField" customModule="AmadeusCheckout" customModuleProvider="target">
+                                            <rect key="frame" x="91" y="0.0" width="505" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="cvv_input"/>
+                                            <color key="textColor" red="0.039108665729999999" green="0.44705882349999998" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="ASCIICapableNumberPad"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YA-Ax-xRG">
+                                            <rect key="frame" x="58" y="-1.5" width="25" height="24.5"/>
+                                            <connections>
+                                                <action selector="cvvHelper:" destination="EcB-W7-huh" eventType="touchUpInside" id="Ga1-bA-rfU"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="CVV" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byv-ek-U0e">
+                                            <rect key="frame" x="16" y="0.0" width="34" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="cvv"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Iab-kD-llw" firstAttribute="leading" secondItem="4YA-Ax-xRG" secondAttribute="trailing" constant="8" id="D9G-so-c66"/>
+                                        <constraint firstItem="4YA-Ax-xRG" firstAttribute="leading" secondItem="Byv-ek-U0e" secondAttribute="trailing" constant="8" id="dQJ-hb-vIG"/>
+                                        <constraint firstAttribute="bottom" secondItem="Byv-ek-U0e" secondAttribute="bottom" constant="0.5" id="eOz-Ux-9l3"/>
+                                        <constraint firstItem="Byv-ek-U0e" firstAttribute="leading" secondItem="YkB-uH-JyK" secondAttribute="leading" constant="16" id="gwh-NU-dZw"/>
+                                        <constraint firstItem="4YA-Ax-xRG" firstAttribute="centerY" secondItem="YkB-uH-JyK" secondAttribute="centerY" id="hwh-Sd-Ctb"/>
+                                        <constraint firstItem="Byv-ek-U0e" firstAttribute="top" secondItem="YkB-uH-JyK" secondAttribute="top" id="mc8-ig-IZR"/>
+                                        <constraint firstAttribute="bottom" secondItem="Iab-kD-llw" secondAttribute="bottom" constant="0.5" id="q2P-VO-xeR"/>
+                                        <constraint firstItem="Iab-kD-llw" firstAttribute="top" secondItem="YkB-uH-JyK" secondAttribute="top" id="rb3-uH-zCT"/>
+                                        <constraint firstAttribute="trailing" secondItem="Iab-kD-llw" secondAttribute="trailing" constant="4" id="y29-Np-7gY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="inputTextField" destination="Iab-kD-llw" id="Clz-VS-8xw"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasicInputCell" id="zeM-bW-th3" customClass="InputTextViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="207.5" width="600" height="21.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zeM-bW-th3" id="4EH-C1-vqC">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="21.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Appleseed" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6Ip-uS-pta" customClass="BoundTextField" customModule="AmadeusCheckout" customModuleProvider="target">
+                                            <rect key="frame" x="74" y="0.0" width="522" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="text_input"/>
+                                            <color key="textColor" red="0.039108665726564608" green="0.44705882352941173" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Title" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7T4-3y-wQz">
+                                            <rect key="frame" x="16" y="0.0" width="50" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="50" id="VIm-BW-VOw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7T4-3y-wQz" firstAttribute="top" secondItem="4EH-C1-vqC" secondAttribute="top" id="N30-Uy-cYE"/>
+                                        <constraint firstAttribute="bottom" secondItem="6Ip-uS-pta" secondAttribute="bottom" constant="0.5" id="Ujq-W0-qhb"/>
+                                        <constraint firstAttribute="bottom" secondItem="7T4-3y-wQz" secondAttribute="bottom" constant="0.5" id="VSL-dE-bxh"/>
+                                        <constraint firstItem="7T4-3y-wQz" firstAttribute="leading" secondItem="4EH-C1-vqC" secondAttribute="leading" constant="16" id="uXl-g1-uso"/>
+                                        <constraint firstItem="6Ip-uS-pta" firstAttribute="top" secondItem="4EH-C1-vqC" secondAttribute="top" id="vFZ-qV-aQ6"/>
+                                        <constraint firstAttribute="trailing" secondItem="6Ip-uS-pta" secondAttribute="trailing" constant="4" id="xp4-Ec-nfd"/>
+                                        <constraint firstItem="6Ip-uS-pta" firstAttribute="leading" secondItem="7T4-3y-wQz" secondAttribute="trailing" constant="8" id="zor-TN-IF4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="inputTextField" destination="6Ip-uS-pta" id="bUY-4j-pDj"/>
+                                    <outlet property="leftLabel" destination="7T4-3y-wQz" id="dW2-DG-TJC"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailCell" id="Jli-GQ-aYY" customClass="DetailTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="229" width="600" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jli-GQ-aYY" id="db1-5A-tWf">
+                                    <rect key="frame" x="0.0" y="0.0" width="569" height="22"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wc-a0-cDH" customClass="BoundLabel" customModule="AmadeusCheckout" customModuleProvider="target">
+                                            <rect key="frame" x="518" y="0.0" width="50" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="50" id="XJf-Hp-rPN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="faS-be-AyA">
+                                            <rect key="frame" x="16" y="0.0" width="494" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="50" id="7XJ-E2-aNt"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyi-Lj-Mdx" customClass="IconViewFactoryView" customModule="AmadeusCheckout" customModuleProvider="target">
+                                            <rect key="frame" x="582" y="4" width="14" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="14" id="FSg-DJ-Ads"/>
+                                                <constraint firstAttribute="height" constant="14" id="js0-Dw-iFW"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="4wc-a0-cDH" secondAttribute="trailing" constant="1" id="27i-Ag-PoY"/>
+                                        <constraint firstItem="4wc-a0-cDH" firstAttribute="leading" secondItem="faS-be-AyA" secondAttribute="trailing" constant="8" id="Cg9-qa-dOA"/>
+                                        <constraint firstAttribute="bottom" secondItem="faS-be-AyA" secondAttribute="bottom" constant="0.5" id="VGu-7F-cbg"/>
+                                        <constraint firstItem="4wc-a0-cDH" firstAttribute="top" secondItem="db1-5A-tWf" secondAttribute="top" id="gKL-fy-B4f"/>
+                                        <constraint firstItem="faS-be-AyA" firstAttribute="top" secondItem="db1-5A-tWf" secondAttribute="top" id="gzg-in-ppI"/>
+                                        <constraint firstItem="faS-be-AyA" firstAttribute="leading" secondItem="db1-5A-tWf" secondAttribute="leading" constant="16" id="o5P-hr-jGh"/>
+                                        <constraint firstItem="zyi-Lj-Mdx" firstAttribute="centerY" secondItem="db1-5A-tWf" secondAttribute="centerY" id="rq3-FC-GNj"/>
+                                        <constraint firstAttribute="bottom" secondItem="4wc-a0-cDH" secondAttribute="bottom" constant="0.5" id="uAC-9R-BxD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zyi-Lj-Mdx" secondAttribute="trailing" constant="4" id="BQj-jb-Ses"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="detailLabel" destination="4wc-a0-cDH" id="Ymp-jc-8Kd"/>
+                                    <outlet property="icon" destination="zyi-Lj-Mdx" id="FGq-V9-psU"/>
+                                    <outlet property="leftLabel" destination="faS-be-AyA" id="0g2-6f-YuT"/>
+                                    <segue destination="P47-OK-bpE" kind="show" identifier="selectCountry" id="tV0-5l-CTY"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EcB-W7-huh" id="4O1-9o-v2W"/>
+                            <outlet property="delegate" destination="EcB-W7-huh" id="o6g-Sx-Igf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Payment" id="lR1-bK-jck">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Upf-pN-tai">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="back"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancel:" destination="EcB-W7-huh" id="181-cl-tKM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Pay" id="9mY-Rr-Vfp">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="next"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pay:" destination="EcB-W7-huh" id="NyA-Xb-wTL"/>
+                            </connections>
+                        </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="title"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="expiryPicker" destination="W8C-Ur-v58" id="bkp-16-hs3"/>
+                        <outlet property="formTableView" destination="tl9-C2-Lfr" id="Y9Y-Mn-tUZ"/>
+                        <outlet property="payButton" destination="9mY-Rr-Vfp" id="pjX-AH-zvN"/>
+                        <segue destination="Vfr-Xb-6vl" kind="show" identifier="externalRedirection" id="3TH-jj-oNZ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4m-4d-UaE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pickerView contentMode="scaleToFill" id="W8C-Ur-v58" customClass="ExpiryPickerView" customModule="AmadeusCheckout" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="316" height="162"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                </pickerView>
+            </objects>
+            <point key="canvasLocation" x="930" y="-800"/>
+        </scene>
+        <!--3DS-->
+        <scene sceneID="w1o-yF-JBI">
+            <objects>
+                <viewController storyboardIdentifier="webRedirectionContent" title="3DS" id="0qr-9A-xDq" customClass="WebRedirectionViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FCa-1y-Ptd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nGK-2j-cte"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cc5-uZ-FGL">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="RXx-BB-8af">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="back"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancel:" destination="0qr-9A-xDq" id="lH9-MI-tbt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="dr2-X1-d57" kind="unwind" identifier="tdsRedirectionFailed" unwindAction="tdsRedirectionFailed:" id="gBe-D6-FCU"/>
+                        <segue destination="dr2-X1-d57" kind="unwind" identifier="tdsRedirectionCancelledByUser" unwindAction="tdsRedirectionCancelledByUser:" id="AM1-3m-Ozt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2x-vZ-2QM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dr2-X1-d57" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2610" y="-1634"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XDw-8P-xDn">
+            <objects>
+                <navigationController storyboardIdentifier="payWithCreditCard" id="TBt-g1-Udy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cc9-HJ-p6g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EcB-W7-huh" kind="relationship" relationship="rootViewController" id="bY0-Wv-TLQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91R-bf-Ksr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="159" y="-800"/>
+        </scene>
+        <!--Payment Method-->
+        <scene sceneID="hF4-Zc-0K5">
+            <objects>
+                <tableViewController id="mAc-eM-5HO" customClass="PaymentMethodsViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Dhg-A0-ae3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PaymentMethodCCCell" textLabel="Xk9-Sk-QbZ" style="IBUITableViewCellStyleDefault" id="qaA-1b-n26" customClass="StyledTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="600" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qaA-1b-n26" id="EKb-jn-acT">
+                                    <rect key="frame" x="0.0" y="0.0" width="569" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xk9-Sk-QbZ">
+                                            <rect key="frame" x="20" y="0.0" width="541" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="EcB-W7-huh" kind="show" id="SUI-DU-Rte"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PaymentMethodAmopCell" textLabel="prv-bX-LCH" style="IBUITableViewCellStyleDefault" id="dMo-Yx-Hea" customClass="StyledTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="99" width="600" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dMo-Yx-Hea" id="d5M-Tq-wIA">
+                                    <rect key="frame" x="0.0" y="0.0" width="569" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="prv-bX-LCH">
+                                            <rect key="frame" x="20" y="0.0" width="541" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Vfr-Xb-6vl" kind="show" id="Km4-jq-Q0f"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mAc-eM-5HO" id="Tb8-I9-cUg"/>
+                            <outlet property="delegate" destination="mAc-eM-5HO" id="8Ly-yj-V3q"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Payment Method" id="u7b-Mf-G9P">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="kDC-7s-gzD">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="back"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancel:" destination="mAc-eM-5HO" id="OBU-Ge-cLk"/>
+                            </connections>
+                        </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="method"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PkZ-Me-Ir6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="-1633"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WCv-bl-sie">
+            <objects>
+                <navigationController storyboardIdentifier="selectPaymentMethod" id="l2t-M9-Eaa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yif-V4-rgD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mAc-eM-5HO" kind="relationship" relationship="rootViewController" id="5QF-Lw-JQw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNK-aS-fDS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-651" y="-1634"/>
+        </scene>
+        <!--Value Selector View Controller-->
+        <scene sceneID="gAD-uR-I70">
+            <objects>
+                <tableViewController id="P47-OK-bpE" customClass="ValueSelectorViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2zh-sg-OEh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainCell" textLabel="v9S-af-WNi" style="IBUITableViewCellStyleDefault" id="BLZ-8x-sSF" customClass="StyledTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BLZ-8x-sSF" id="5Y3-ca-dQG">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v9S-af-WNi">
+                                            <rect key="frame" x="20" y="0.0" width="560" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="P47-OK-bpE" id="4Bb-eu-GpR"/>
+                            <outlet property="delegate" destination="P47-OK-bpE" id="3kq-ig-R1v"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="yJZ-lG-Mi4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5su-Fv-3dv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="41"/>
+        </scene>
+        <!--Credit Card Cvv Help View Controller-->
+        <scene sceneID="11F-tx-GSA">
+            <objects>
+                <viewController storyboardIdentifier="cvvHelpViewController" id="oyb-WZ-3IE" customClass="CreditCardCvvHelpViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nNM-R3-6tK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uw-X9-oxE">
+                                <rect key="frame" x="180" y="240" width="240" height="160"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q3u-FT-7Ih">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="160"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73N-iA-gwX" customClass="CreditCardCvvHelperOkButton" customModule="AmadeusCheckout" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="117" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <state key="normal" title="OK">
+                                                <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="ok"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="onTapOkButton:" destination="oyb-WZ-3IE" eventType="touchUpInside" id="5g7-Pq-Olb"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Security Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czh-0w-bBP">
+                                            <rect key="frame" x="8" y="8" width="224" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="cvv"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHI-zy-lPn">
+                                            <rect key="frame" x="0.0" y="117" width="240" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cvv" translatesAutoresizingMaskIntoConstraints="NO" id="Vxc-Iu-eyW">
+                                            <rect key="frame" x="75" y="50" width="90" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="V12-wZ-W5T"/>
+                                    <constraint firstAttribute="width" constant="240" id="u64-vO-D3q"/>
+                                </constraints>
+                                <blurEffect style="prominent"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9uw-X9-oxE" firstAttribute="centerY" secondItem="nNM-R3-6tK" secondAttribute="centerY" constant="20" id="3ga-Rq-bnb"/>
+                            <constraint firstItem="9uw-X9-oxE" firstAttribute="centerX" secondItem="nNM-R3-6tK" secondAttribute="centerX" id="z4t-Uq-Fzq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d7p-ez-YpR"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="alertView" destination="9uw-X9-oxE" id="8SC-Xo-DkZ"/>
+                        <outlet property="helpImage" destination="Vxc-Iu-eyW" id="jWp-hu-lyP"/>
+                        <outlet property="okButton" destination="73N-iA-gwX" id="Mbg-FS-Aas"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0nV-Ye-dbc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124.6376811594203" y="64.955357142857139"/>
+        </scene>
+        <!--Credit Card Vendor View Controller-->
+        <scene sceneID="3Zr-dU-ceK">
+            <objects>
+                <tableViewController id="g43-1w-pf0" customClass="CreditCardVendorViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="di7-K5-l1I">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VendorCell" textLabel="PiO-dy-dtP" imageView="98b-eG-8fK" style="IBUITableViewCellStyleDefault" id="rQg-tD-Qyz" customClass="StyledTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rQg-tD-Qyz" id="cAq-pD-JEf">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PiO-dy-dtP">
+                                            <rect key="frame" x="20" y="0.0" width="560" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="98b-eG-8fK">
+                                            <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="g43-1w-pf0" id="vlG-aU-rv2"/>
+                            <outlet property="delegate" destination="g43-1w-pf0" id="FjJ-eJ-RCa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="fmf-DZ-ocj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bD-1S-xYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="-800"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k3n-7v-DHR">
+            <objects>
+                <navigationController storyboardIdentifier="webRedirection" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="Vfr-Xb-6vl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="p4x-Bd-8Up"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OFc-Tw-Cvg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0qr-9A-xDq" kind="relationship" relationship="rootViewController" id="Ieu-gP-JjY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VPR-dE-gLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="-1635"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cvv" width="90" height="40.5"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3TH-jj-oNZ"/>
+        <segue reference="bY0-Wv-TLQ"/>
+    </inferredMetricsTieBreakers>
+</document>
