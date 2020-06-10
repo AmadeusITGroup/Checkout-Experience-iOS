@@ -90,7 +90,7 @@ enum BackendError: Error {
 class BackendServices {
     typealias Callback = (JSON?, BackendError?)->Void
     
-    static let queryTimeout = 10.0
+    static let queryTimeout = 30.0
 
     var environement: Environment
     var ppid: String

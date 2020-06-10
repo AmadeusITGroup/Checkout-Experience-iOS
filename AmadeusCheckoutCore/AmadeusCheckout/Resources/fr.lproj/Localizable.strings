@@ -15,7 +15,7 @@
 "label_vendor" = "Type de carte";
 "label_ccnum" = "Numéro de carte";
 "label_cardHolderName" = "Titulaire de la carte";
-"label_cardHolderNamePlaceholder" = "John Appleseed";
+"label_cardHolderNamePlaceholder" = "Durand";
 "label_expirydate" = "Date d'expiration";
 "label_cvv" = "Cryptogramme visuel";
 "label_method" = "Méthode de paiement";
@@ -29,8 +29,10 @@
 "label_zipCodePlaceholder" = "Code postal";
 "label_cityPlaceholder" = "Ville";
 "label_country" = "Pays";
-"label_optional" = "(optionnel)";
+"label_optional" = " (optionnel)";
 "label_summary" = "Récapitulatif"; // Not used
+"label_passengers" = "Passager(s)";
+"label_flights" = "Vols(s)";
 "label_ccdetails" = "Carte de paiement";
 "label_billingAddress" = "Addresse de facturation";
 "label_loading" = "Veuillez patienter...";
@@ -67,6 +69,6 @@
 //ERRORS
 "label_error_payment" = "Le paiement a été rejeté par notre partenaire de paiement.\nVeuillez réessayer ou fournir une autre méthode de paiement.";
 "label_error_unreachable_network" = "Veuillez vérifier votre connexion internet.";
-"label_error_session_will_expire" = "Il ne vous reste plus que {0} pour terminer votre paiement.";
+"label_error_session_will_expire" = "Il vous reste {0} pour terminer votre paiement.";
 "label_error_invalid_form" = "Certaines informations sont incorrectes ou manquantes";
 "label_error_term_and_conditions" = "Vous devez accepter les conditions générales";

@@ -67,7 +67,7 @@ extension SwiftyJSONError: CustomNSError {
  
  See http://www.json.org
  */
-public enum Type: Int {
+enum Type: Int {
     case number
     case string
     case bool

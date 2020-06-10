@@ -39,7 +39,7 @@ class BookingDetailsView: UIView {
         initContentView(maxWidth: 700, leftRightMargins: 16)
         
         if let flightList = details?.flightList, flightList.count > 0 {
-            appendView(makeTitle("Flight(s)", opened:isFlightOpened, tag:1, chevonIconSize: 20), marginTop: 8, leftRightMargins:0)
+            appendView(makeTitle("flights".localize(type: .label), opened:isFlightOpened, tag:1, chevonIconSize: 20), marginTop: 8, leftRightMargins:0)
             if isFlightOpened {
                 for flight in flightList {
                     let flightBlock = makeFlightBlock(
@@ -56,7 +56,7 @@ class BookingDetailsView: UIView {
         }
         
         if let passengerList = details?.passengerList, passengerList.count > 0 {
-            appendView(makeTitle("Passenger(s)",opened:isPassengersOpened, tag:2, chevonIconSize: 20), marginTop: isFlightOpened ? 16 : 0, leftRightMargins:0)
+            appendView(makeTitle("passengers".localize(type: .label),opened:isPassengersOpened, tag:2, chevonIconSize: 20), marginTop: isFlightOpened ? 16 : 0, leftRightMargins:0)
             if isPassengersOpened {
                 for passenger in passengerList {
                     appendView(makeLabel(passenger), marginTop: 8, leftRightMargins:8)
