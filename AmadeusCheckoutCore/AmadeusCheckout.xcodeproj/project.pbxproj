@@ -212,6 +212,7 @@
 		66D6F4072270588900076C83 /* AMCheckoutOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCheckoutOptions.swift; sourceTree = "<group>"; };
 		66D6F4092270589500076C83 /* AMPaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMPaymentMethod.swift; sourceTree = "<group>"; };
 		66D6F40B227064DF00076C83 /* AMEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMEnvironment.swift; sourceTree = "<group>"; };
+		66EC57C8249794AF006B707A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		66F1622922F86EA300210923 /* ValueSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueSelectorViewController.swift; sourceTree = "<group>"; };
 		66F5657722C60E980017E7D7 /* LoadIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadIndicator.swift; sourceTree = "<group>"; };
 		66FA9333234F6C6A002FD5D1 /* BookingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsView.swift; sourceTree = "<group>"; };
@@ -627,6 +628,7 @@
 				en,
 				Base,
 				fr,
+				"zh-Hant",
 			);
 			mainGroup = 6696DFEF225636DA0059F4B2;
 			productRefGroup = 6696DFFA225636DA0059F4B2 /* Products */;
@@ -819,6 +821,7 @@
 			children = (
 				CAF0F24722B13F0400F6CE81 /* en */,
 				CAF0F24822B13F5E00F6CE81 /* fr */,
+				66EC57C8249794AF006B707A /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1058,6 +1061,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1069,6 +1073,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeus.ios.AmadeusCheckout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1083,6 +1088,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1094,6 +1100,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeus.ios.AmadeusCheckout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

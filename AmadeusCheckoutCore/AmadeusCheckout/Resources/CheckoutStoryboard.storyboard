@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,19 +13,19 @@
             <objects>
                 <tableViewController storyboardIdentifier="payWithCreditCardContent" id="EcB-W7-huh" customClass="CreditCardViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tl9-C2-Lfr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CardVendorCell" id="xuN-aZ-Wrr" customClass="VendorTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="600" height="43.5"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xuN-aZ-Wrr" id="Xl9-Gn-uIG">
-                                    <rect key="frame" x="0.0" y="0.0" width="569" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vendor" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yDu-1u-TEs">
-                                            <rect key="frame" x="16" y="0.0" width="495" height="43"/>
+                                            <rect key="frame" x="16" y="0.0" width="309" height="43"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -33,7 +35,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2e-mH-hcz" customClass="BoundImageView" customModule="AmadeusCheckout" customModuleProvider="target">
-                                            <rect key="frame" x="519" y="8" width="43" height="27"/>
+                                            <rect key="frame" x="333" y="8" width="43" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -44,14 +46,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardNumberCell" rowHeight="66" id="M19-oN-SvS" customClass="CardNumberTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="99" width="600" height="66"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M19-oN-SvS" id="ZOJ-Zb-CId">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0000 0000 0000 0000" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="45A-Pj-CJb" customClass="BoundTextField" customModule="AmadeusCheckout" customModuleProvider="target">
-                                            <rect key="frame" x="67" y="17" width="529" height="48"/>
+                                            <rect key="frame" x="67" y="17" width="343" height="48"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             <accessibility key="accessibilityConfiguration" identifier="card_number_input"/>
                                             <color key="textColor" red="0.039215686274509803" green="0.44705882352941173" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,7 +61,7 @@
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="cc-number"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jl7-tG-bEq">
-                                            <rect key="frame" x="16" y="0.0" width="580" height="37"/>
+                                            <rect key="frame" x="16" y="0.0" width="394" height="37"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -80,21 +82,21 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpiryCell" id="hrp-oH-R8D" customClass="ExpiryTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="165" width="600" height="21"/>
+                                <rect key="frame" x="0.0" y="165" width="414" height="21.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hrp-oH-R8D" id="5jd-hR-FPi">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="21"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="21.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MM/YY" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="JYh-um-dsy" customClass="BoundTextField" customModule="AmadeusCheckout" customModuleProvider="target">
-                                            <rect key="frame" x="71" y="0.0" width="525" height="21"/>
+                                            <rect key="frame" x="71" y="0.0" width="339" height="21.5"/>
                                             <accessibility key="accessibilityConfiguration" identifier="expiry_input"/>
                                             <color key="textColor" red="0.039215686270000001" green="0.44705882349999998" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Expiry" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WHb-m7-h8F">
-                                            <rect key="frame" x="16" y="0.0" width="47" height="21"/>
+                                            <rect key="frame" x="16" y="0.0" width="47" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -119,27 +121,27 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CvvCell" id="a3p-6I-609" customClass="CvvTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="186" width="600" height="21.5"/>
+                                <rect key="frame" x="0.0" y="186.5" width="414" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a3p-6I-609" id="YkB-uH-JyK">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="21.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="000" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Iab-kD-llw" customClass="BoundTextField" customModule="AmadeusCheckout" customModuleProvider="target">
-                                            <rect key="frame" x="91" y="0.0" width="505" height="21"/>
+                                            <rect key="frame" x="91" y="0.0" width="319" height="21.5"/>
                                             <accessibility key="accessibilityConfiguration" identifier="cvv_input"/>
                                             <color key="textColor" red="0.039108665729999999" green="0.44705882349999998" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="ASCIICapableNumberPad"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YA-Ax-xRG">
-                                            <rect key="frame" x="58" y="-1.5" width="25" height="24.5"/>
+                                            <rect key="frame" x="58" y="-1" width="25" height="24"/>
                                             <connections>
                                                 <action selector="cvvHelper:" destination="EcB-W7-huh" eventType="touchUpInside" id="Ga1-bA-rfU"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="CVV" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byv-ek-U0e">
-                                            <rect key="frame" x="16" y="0.0" width="34" height="21"/>
+                                            <rect key="frame" x="16" y="0.0" width="34" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -161,25 +163,26 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cvvHelpButton" destination="4YA-Ax-xRG" id="R7Y-hb-l75"/>
                                     <outlet property="inputTextField" destination="Iab-kD-llw" id="Clz-VS-8xw"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasicInputCell" id="zeM-bW-th3" customClass="InputTextViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="207.5" width="600" height="21.5"/>
+                                <rect key="frame" x="0.0" y="208.5" width="414" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zeM-bW-th3" id="4EH-C1-vqC">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="21.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Appleseed" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6Ip-uS-pta" customClass="BoundTextField" customModule="AmadeusCheckout" customModuleProvider="target">
-                                            <rect key="frame" x="74" y="0.0" width="522" height="21"/>
+                                            <rect key="frame" x="74" y="0.0" width="336" height="21.5"/>
                                             <accessibility key="accessibilityConfiguration" identifier="text_input"/>
                                             <color key="textColor" red="0.039108665726564608" green="0.44705882352941173" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Title" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7T4-3y-wQz">
-                                            <rect key="frame" x="16" y="0.0" width="50" height="21"/>
+                                            <rect key="frame" x="16" y="0.0" width="50" height="21.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="50" id="VIm-BW-VOw"/>
                                             </constraints>
@@ -204,14 +207,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailCell" id="Jli-GQ-aYY" customClass="DetailTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="229" width="600" height="22"/>
+                                <rect key="frame" x="0.0" y="230.5" width="414" height="21.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jli-GQ-aYY" id="db1-5A-tWf">
-                                    <rect key="frame" x="0.0" y="0.0" width="569" height="22"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="21.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wc-a0-cDH" customClass="BoundLabel" customModule="AmadeusCheckout" customModuleProvider="target">
-                                            <rect key="frame" x="518" y="0.0" width="50" height="21.5"/>
+                                            <rect key="frame" x="332" y="0.0" width="50" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="50" id="XJf-Hp-rPN"/>
                                             </constraints>
@@ -220,7 +223,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="faS-be-AyA">
-                                            <rect key="frame" x="16" y="0.0" width="494" height="21.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="308" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="50" id="7XJ-E2-aNt"/>
                                             </constraints>
@@ -229,7 +232,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyi-Lj-Mdx" customClass="IconViewFactoryView" customModule="AmadeusCheckout" customModuleProvider="target">
-                                            <rect key="frame" x="582" y="4" width="14" height="14"/>
+                                            <rect key="frame" x="396" y="4" width="14" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="14" id="FSg-DJ-Ads"/>
                                                 <constraint firstAttribute="height" constant="14" id="js0-Dw-iFW"/>
@@ -304,7 +307,7 @@
             <objects>
                 <viewController storyboardIdentifier="webRedirectionContent" title="3DS" id="0qr-9A-xDq" customClass="WebRedirectionViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FCa-1y-Ptd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nGK-2j-cte"/>
@@ -334,7 +337,7 @@
             <objects>
                 <navigationController storyboardIdentifier="payWithCreditCard" id="TBt-g1-Udy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cc9-HJ-p6g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -350,19 +353,19 @@
             <objects>
                 <tableViewController id="mAc-eM-5HO" customClass="PaymentMethodsViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Dhg-A0-ae3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PaymentMethodCCCell" textLabel="Xk9-Sk-QbZ" style="IBUITableViewCellStyleDefault" id="qaA-1b-n26" customClass="StyledTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="600" height="43.5"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qaA-1b-n26" id="EKb-jn-acT">
-                                    <rect key="frame" x="0.0" y="0.0" width="569" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xk9-Sk-QbZ">
-                                            <rect key="frame" x="20" y="0.0" width="541" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="355" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -375,14 +378,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PaymentMethodAmopCell" textLabel="prv-bX-LCH" style="IBUITableViewCellStyleDefault" id="dMo-Yx-Hea" customClass="StyledTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="99" width="600" height="43.5"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dMo-Yx-Hea" id="d5M-Tq-wIA">
-                                    <rect key="frame" x="0.0" y="0.0" width="569" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="prv-bX-LCH">
-                                            <rect key="frame" x="20" y="0.0" width="541" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="355" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -423,7 +426,7 @@
             <objects>
                 <navigationController storyboardIdentifier="selectPaymentMethod" id="l2t-M9-Eaa" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yif-V4-rgD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -439,19 +442,19 @@
             <objects>
                 <tableViewController id="P47-OK-bpE" customClass="ValueSelectorViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2zh-sg-OEh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainCell" textLabel="v9S-af-WNi" style="IBUITableViewCellStyleDefault" id="BLZ-8x-sSF" customClass="StyledTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BLZ-8x-sSF" id="5Y3-ca-dQG">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v9S-af-WNi">
-                                            <rect key="frame" x="20" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -477,11 +480,11 @@
             <objects>
                 <viewController storyboardIdentifier="cvvHelpViewController" id="oyb-WZ-3IE" customClass="CreditCardCvvHelpViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nNM-R3-6tK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uw-X9-oxE">
-                                <rect key="frame" x="180" y="240" width="240" height="160"/>
+                                <rect key="frame" x="87" y="388" width="240" height="160"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q3u-FT-7Ih">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="160"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -550,19 +553,19 @@
             <objects>
                 <tableViewController id="g43-1w-pf0" customClass="CreditCardVendorViewController" customModule="AmadeusCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="di7-K5-l1I">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VendorCell" textLabel="PiO-dy-dtP" imageView="98b-eG-8fK" style="IBUITableViewCellStyleDefault" id="rQg-tD-Qyz" customClass="StyledTableViewCell" customModule="AmadeusCheckout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rQg-tD-Qyz" id="cAq-pD-JEf">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PiO-dy-dtP">
-                                            <rect key="frame" x="20" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -594,7 +597,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="p4x-Bd-8Up"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OFc-Tw-Cvg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

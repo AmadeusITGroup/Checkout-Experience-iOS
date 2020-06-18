@@ -10,7 +10,6 @@
 
 //LABELS
 "label_baseamount" = "Prix de base";
-"label_amount" = "Prix total";
 "label_fees" = "Frais carte de paiement";
 "label_vendor" = "Type de carte";
 "label_ccnum" = "Numéro de carte";

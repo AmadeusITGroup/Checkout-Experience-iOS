@@ -77,10 +77,13 @@ public class AMTermsAndConditions : NSObject {
 public class AMCheckoutOptions : NSObject {
     // Behavior customizations
     @objc public var displayPayButtonOnTop = false
+    @objc public var displayCvvHelp = true
     @objc public var dynamicVendor = false
     @objc public var termsAndConditions: [AMTermsAndConditions] = []
     @objc public var bookingDetails: AMBookingDetails?
     @objc public var amountBreakdown: [AMAmountDetails] = []
+    @objc public var paymentControllerPresentationStyle: UIModalPresentationStyle = .pageSheet
+    
     
     // This should be overriden by application if a redirection
     // to an external application or browser can occur.

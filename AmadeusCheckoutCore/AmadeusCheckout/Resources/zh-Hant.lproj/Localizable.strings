@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  AmadeusCheckout
+
+  Created by Hela OTHMANI on 12/06/2019.
+  Copyright © 2019 Amadeus. All rights reserved.
+*/
+
+// "key" = "localized value";
+
+//LABELS
+"label_baseamount" = "票價費用";
+"label_fees" = "手續費";
+"label_vendor" = "信用卡類型";
+"label_ccnum" = "信用卡卡號";
+"label_cardHolderName" = "持卡人姓名";
+"label_cardHolderNamePlaceholder" = "持卡人姓名";
+"label_expirydate" = "有效日期";
+"label_cvv" = "驗證碼";
+"label_method" = "付款方式";
+"label_title" = "付款";
+"label_addressLine1" = "1行";
+"label_addressLine2" = "2行";
+"label_zipCode" = "邮政编码";
+"label_city" = "市";
+"label_addressLine1Placeholder" = "地址";
+"label_addressLine2Placeholder" = "另外地址";
+"label_zipCodePlaceholder" = "邮政编码";
+"label_cityPlaceholder" = "市";
+"label_country" = "国家";
+"label_optional" = " (選填)";
+"label_summary" = "行程總覽"; // Not used
+"label_passengers" = "乘客";
+"label_flights" = "航班";
+"label_ccdetails" = "付款資訊";
+"label_billingAddress" = "帐单地址";
+"label_loading" = "請稍後…";
+"label_obFees" = "將收取 {0} 手續費";
+"label_error" = "錯誤";
+"label_warning" = "請注意";
+"label_valid_termcondition" = "我已閱讀並接受[協議與條款]";
+"label_select_payment_method" = "选择付款方式";
+"label_scan_card" = "掃描信用卡";
+
+//PLACE HOLDERS
+"pMonth" = "月";
+"pYear" = "年";
+
+//BUTTONS
+"button_back" = "取消";
+"button_next" = "付款";
+"button_ok" = "OK";
+"button_retry" = "重試";
+"button_cancel_payment" = "取消付款";
+"button_continue" = "下一步";
+"button_total" = "總計 {0}";
+
+//FIELD ERRORS
+"error_field_mandatory" = "此欄位為必填";
+"error_field_expiryDate" = "有效日期錯誤";
+"error_field_luhn" = "信用卡卡號錯誤";
+"error_field_bin" = "卡號與卡類型不符";
+"error_field_cvv" = "驗證碼須為 {0} 位數";
+"error_field_unsupported" = "不支援此卡別";
+"error_field_maxLength" = "最多 {0} 字元";
+"error_field_minLength" = "最少 {0} 字元";
+
+//ERRORS
+"label_error_payment" = "您的付款未成功，請重試或使用其他付款方式。";
+"label_error_unreachable_network" = "請檢查網路連線。";
+"label_error_session_will_expire" = "請於 {0} 內完成付款。";
+"label_error_invalid_form" = "部分必填欄位未填寫或有誤";
+"label_error_term_and_conditions" = "您必須接受協議與條款";
+

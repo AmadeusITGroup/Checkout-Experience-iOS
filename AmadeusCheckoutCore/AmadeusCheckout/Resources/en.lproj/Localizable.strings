@@ -10,7 +10,6 @@
 
 //LABELS
 "label_baseamount" = "Base price";
-"label_amount" = "Total amount";
 "label_fees" = "Card fees";
 "label_vendor" = "Card type";
 "label_ccnum" = "Card number";
@@ -42,7 +41,6 @@
 "label_valid_termcondition" = "I have read and accept the [terms and conditions]";
 "label_select_payment_method" = "Select Payment Method";
 "label_scan_card" = "Scan Credit Card";
-
 
 //PLACE HOLDERS
 "pMonth" = "Month";

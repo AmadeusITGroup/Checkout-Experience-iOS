@@ -30,7 +30,7 @@ Then, right before starting the checkout process, you need to retrieve a PPID fr
 Add this line to your *Podfile*
 ```
 use_frameworks!
-pod 'AmadeusCheckout', :git => 'https://github.com/AmadeusITGroup/Checkout-Experience-iOS.git', :tag => '1.0.0'
+pod 'AmadeusCheckout', :git => 'https://github.com/AmadeusITGroup/Checkout-Experience-iOS.git', :tag => '<version>'
 ```
 
 Then run the following command:
@@ -42,7 +42,7 @@ Xcode will ask if you want to configure an Objective-C bridging header, you can 
 ### Using Carthage
 
 Add this line to your *Cartfile*
-`git "https://github.com/AmadeusITGroup/Checkout-Experience-iOS.git" == 1.0.0`
+`git "https://github.com/AmadeusITGroup/Checkout-Experience-iOS.git" == <version>`
 
 Then follow the [Carthage installation instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos).
 
@@ -67,7 +67,7 @@ For example, the *CardIOPlugin* allows to scan a credit card with the device cam
 
 The integration depends on the used dependency manager:
 - **Cocoapods**: add the following line inside your *Podfile*
-  `pod 'AmadeusCheckout/CardIOPlugin', :git => 'https://github.com/AmadeusITGroup/Checkout-Experience-iOS.git', :tag => '1.0.0'`
+  `pod 'AmadeusCheckout/CardIOPlugin', :git => 'https://github.com/AmadeusITGroup/Checkout-Experience-iOS.git', :tag => '<version>'`
 - **Carthage**: all plugins are available in the *Carthage* build folder, just drag the ones you need on your project. Don't forget to also add the associated third party frameworks.
 - Manual (dynamic framework) : add the plugin, and the third party framework inside the *Embedded Binaries* section.
 
@@ -188,7 +188,9 @@ You can configure the appearance, by setting the following properties on the `AM
 | `bookingDetails` | `AMBookingDetails` | List of passengers and/or flights, to be displayed on Credit Card form. If no passenger list or flight list is provided, the corresponding section won't be displayed. |
 | `amountBreakdown` | `Array` of `AMAmountDetails` |  |
 | `displayPayButtonOnTop` | `Boolean` | Also display the pay button inside the navigation bar  |
-| `dynamicVendor` | `Boolean` | Automatically dectect the card type instead of letting the user choosing it |
+| `dynamicVendor` | `Boolean` | Automatically detect the card type instead of letting the user choosing it |
+| `displayCvvHelp` | `Boolean` | Display a help button next to CVV label  |
+| `paymentControllerPresentationStyle` | `UIModalPresentationStyle` | Presentation style used for the payment controller. The following values can be used: `fullScreen`, `pageSheet` or `formSheet` . |
 
 #### Callback Scheme
 If your setup includes an alternative method of payment that may redirect to a third party application or website, you have to set-up a callback scheme.

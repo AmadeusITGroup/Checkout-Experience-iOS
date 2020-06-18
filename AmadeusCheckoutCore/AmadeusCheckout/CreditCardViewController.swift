@@ -57,7 +57,11 @@ class CreditCardViewController: UITableViewController, KeyboardToolbarDelegate, 
         keyboardToolbar = KeyboardToolbar()
         keyboardToolbar.toolBarDelegate = self
         
-        payToolbar = CreditCardToolbar(termsAndConditions:(ctx?.options.termsAndConditions) ?? [], theme:theme)
+        payToolbar = CreditCardToolbar(
+            termsAndConditions:(ctx?.options.termsAndConditions) ?? [],
+            enableBreakdownButton: (ctx?.options.amountBreakdown.count ?? 0)>0 || (ctx?.dataModel?.calculateObFee ?? false),
+            theme:theme
+        )
         payToolbar.hostViewController = self
         payToolbar.payButton.addTarget(self, action: #selector(self.pay(_:)), for: .touchUpInside)
         

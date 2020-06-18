@@ -160,7 +160,8 @@ public class AMCheckoutContext : NSObject {
         
         let storyBoard = UIStoryboard(name:StoryboardConstants.Filename, bundle: FileTools.mainBundle)
         viewController = storyBoard.instantiateViewController(withIdentifier:viewControllerIdentifier)
-        viewController?.modalPresentationStyle = .pageSheet // use .fullScreen to have a fullscreen modal
+        viewController?.modalPresentationStyle = options.paymentControllerPresentationStyle
+        
         if #available(iOS 13.0, *) { viewController?.isModalInPresentation = true }
         hostViewController!.present(viewController!, animated: true, completion: nil)
     }

@@ -196,6 +196,15 @@ class ExpiryTableViewCell: InputTextViewCell {
 }
 
 class CvvTableViewCell: InputTextViewCell {
+    @IBOutlet var cvvHelpButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        if(AMCheckoutContext.sharedContext?.options.displayCvvHelp != true)  {
+            self.cvvHelpButton.isHidden = true
+        }
+    }
+    
     override func setupLabels(cell: TableModel.Cell, isOptional: Bool) {}
     
     override func setupBinding(bindingsAggregator: DataModelBindingAggregator, cellBindings: [DataModelBinding]) {

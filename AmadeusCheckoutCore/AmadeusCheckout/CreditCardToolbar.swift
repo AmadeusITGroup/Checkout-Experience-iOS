@@ -26,9 +26,10 @@ class CreditCardToolbar: UIView, SFSafariViewControllerDelegate {
     var checkbox: Checkbox!
     var payButton: UIButton!
     var amountButton: UIButton!
-    var amountBreakDownIcon: UIView!
+    var amountBreakdownIcon: UIView!
     var contentWrapper: UIView!
     var amountBreakdownPopover: AmountBreakdownPopoverController
+    var enableBreakdownButton: Bool
     
     weak var hostViewController: UIViewController!
     var displayedInsideTableView = false
@@ -38,8 +39,9 @@ class CreditCardToolbar: UIView, SFSafariViewControllerDelegate {
         fatalError("Not implemented.")
     }
 
-    init(termsAndConditions:[AMTermsAndConditions] , theme: Theme) {
+    init(termsAndConditions:[AMTermsAndConditions] , enableBreakdownButton: Bool ,theme: Theme) {
         self.theme = theme
+        self.enableBreakdownButton = enableBreakdownButton
         self.termsAndConditionsList = termsAndConditions
         self.toolbarHeight = termsAndConditions.isEmpty ? toolbarLineHeight : 2*toolbarLineHeight
         self.amountBreakdownPopover = AmountBreakdownPopoverController(theme: theme)
@@ -171,8 +173,11 @@ class CreditCardToolbar: UIView, SFSafariViewControllerDelegate {
         amountButton.tintColor = theme.accentColor
         amountButton.titleLabel!.adjustsFontSizeToFitWidth = true
         amountButton.titleLabel!.minimumScaleFactor = 0.5
-        amountButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 28.0)
+        //amountButton.titleLabel!.lineBreakMode = .byWordWrapping
+        //amountButton.titleLabel!.numberOfLines = 2
+        amountButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: self.enableBreakdownButton ? 28.0 : 0.0)
         amountButton.titleLabel?.font = theme.font
+        amountButton.isUserInteractionEnabled = self.enableBreakdownButton
         
         refreshAmountBreakdownButton()
         
@@ -196,20 +201,24 @@ class CreditCardToolbar: UIView, SFSafariViewControllerDelegate {
      Refresh the open/close icon next to the amount button.
      */
     private func refreshAmountBreakdownButton() {
-        if amountBreakDownIcon != nil {
-            amountBreakDownIcon!.removeFromSuperview()
+        if !self.enableBreakdownButton {
+            return
+        }
+        
+        if amountBreakdownIcon != nil {
+            amountBreakdownIcon!.removeFromSuperview()
         }
         let icon = amountBreakdownPopover.isBeingPresented ? IconViewFactory.chevronDown : IconViewFactory.chevronUp
-        amountBreakDownIcon = icon.createView(color: theme.accentColor, scaleToFit: true)
-        amountBreakDownIcon.translatesAutoresizingMaskIntoConstraints = false
-        amountBreakDownIcon.isUserInteractionEnabled = false
-        amountButton.addSubview(amountBreakDownIcon)
+        amountBreakdownIcon = icon.createView(color: theme.accentColor, scaleToFit: true)
+        amountBreakdownIcon.translatesAutoresizingMaskIntoConstraints = false
+        amountBreakdownIcon.isUserInteractionEnabled = false
+        amountButton.addSubview(amountBreakdownIcon)
         
         NSLayoutConstraint.activate([
-            amountBreakDownIcon.topAnchor.constraint(equalTo: amountButton.topAnchor),
-            amountBreakDownIcon.bottomAnchor.constraint(equalTo: amountButton.bottomAnchor),
-            amountBreakDownIcon.trailingAnchor.constraint(equalTo: amountButton.trailingAnchor, constant: -8),
-            amountBreakDownIcon.widthAnchor.constraint(equalToConstant: 20.0)
+            amountBreakdownIcon.topAnchor.constraint(equalTo: amountButton.topAnchor),
+            amountBreakdownIcon.bottomAnchor.constraint(equalTo: amountButton.bottomAnchor),
+            amountBreakdownIcon.trailingAnchor.constraint(equalTo: amountButton.trailingAnchor, constant: -8),
+            amountBreakdownIcon.widthAnchor.constraint(equalToConstant: 20.0)
         ])
     }
     

@@ -15,6 +15,7 @@ class OptionsViewController: UIViewController {
     
     @IBOutlet var payOnTopSwitch: UISwitch!
     @IBOutlet var dynamicVendorSwitch: UISwitch!
+    @IBOutlet var hideCvvHelp: UISwitch!
     @IBOutlet var appCallbackSchemeField: UITextField!
     
     @IBOutlet var primaryBackgroundColorSwitch: UISwitch!
@@ -42,6 +43,7 @@ class OptionsViewController: UIViewController {
     @IBOutlet var emphasisFontTypeControl: UISegmentedControl!
     @IBOutlet var emphasisFontSizeSlider: UISlider!
     @IBOutlet var emphasisFontSizeLabel: UILabel!
+    @IBOutlet var presentationStyleControl: UISegmentedControl!
     
     @IBOutlet var termsAndConditionsNumberControl: UISegmentedControl!
     @IBOutlet var termsAndConditionsSizeControl: UISegmentedControl!
@@ -83,6 +85,12 @@ class OptionsViewController: UIViewController {
         
         opt.displayPayButtonOnTop = payOnTopSwitch.isOn
         opt.dynamicVendor = dynamicVendorSwitch.isOn
+        opt.displayCvvHelp = !hideCvvHelp.isOn
+        opt.paymentControllerPresentationStyle = [
+            UIModalPresentationStyle.pageSheet,
+            UIModalPresentationStyle.formSheet,
+            UIModalPresentationStyle.fullScreen
+            ][presentationStyleControl.selectedSegmentIndex]
         
         opt.appCallbackScheme = appCallbackSchemeField.text ?? ""
         

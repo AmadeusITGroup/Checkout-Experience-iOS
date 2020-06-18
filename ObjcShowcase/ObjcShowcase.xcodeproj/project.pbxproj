@@ -11,11 +11,11 @@
 		667D252523C71A5900BA5947 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 667D252423C71A5900BA5947 /* ViewController.m */; };
 		667D252A23C71A5A00BA5947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667D252923C71A5A00BA5947 /* Assets.xcassets */; };
 		667D253023C71A5A00BA5947 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 667D252F23C71A5A00BA5947 /* main.m */; };
-		667D253823C71A9D00BA5947 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667D253623C71A9D00BA5947 /* LaunchScreen.storyboard */; };
 		667D253923C71A9D00BA5947 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 667D253723C71A9D00BA5947 /* Main.storyboard */; };
 		667D253C23C71AB100BA5947 /* AmadeusCheckout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667D253B23C71AB100BA5947 /* AmadeusCheckout.framework */; };
 		667D253D23C71AB100BA5947 /* AmadeusCheckout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 667D253B23C71AB100BA5947 /* AmadeusCheckout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		667D254023C71AB400BA5947 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667D253F23C71AB400BA5947 /* WebKit.framework */; };
+		66EC57CB2497B1C6006B707A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EC57CA2497B1C5006B707A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,10 +41,10 @@
 		667D252923C71A5A00BA5947 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		667D252E23C71A5A00BA5947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		667D252F23C71A5A00BA5947 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		667D253623C71A9D00BA5947 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../../AmadeusCheckoutCore/HostApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		667D253723C71A9D00BA5947 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		667D253B23C71AB100BA5947 /* AmadeusCheckout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AmadeusCheckout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		667D253F23C71AB400BA5947 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		66EC57CA2497B1C5006B707A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 				667D251E23C71A5900BA5947 /* AppDelegate.m */,
 				667D252323C71A5900BA5947 /* ViewController.h */,
 				667D252423C71A5900BA5947 /* ViewController.m */,
-				667D253623C71A9D00BA5947 /* LaunchScreen.storyboard */,
+				66EC57CA2497B1C5006B707A /* LaunchScreen.storyboard */,
 				667D253723C71A9D00BA5947 /* Main.storyboard */,
 				667D252923C71A5A00BA5947 /* Assets.xcassets */,
 				667D252E23C71A5A00BA5947 /* Info.plist */,
@@ -161,8 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				667D253923C71A9D00BA5947 /* Main.storyboard in Resources */,
+				66EC57CB2497B1C6006B707A /* LaunchScreen.storyboard in Resources */,
 				667D252A23C71A5A00BA5947 /* Assets.xcassets in Resources */,
-				667D253823C71A9D00BA5947 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ObjcShowcase/Info.plist;
@@ -306,6 +307,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeus.ios.AmadeusCheckout.ObjcShowcase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -314,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ObjcShowcase/Info.plist;
@@ -324,6 +327,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeus.ios.AmadeusCheckout.ObjcShowcase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
