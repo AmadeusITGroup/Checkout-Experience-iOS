@@ -3,3 +3,4 @@
 /Carthage
 .DS_Store
 xcuserdata
+/coverage-report.xcresult/

@@ -1,5 +1,5 @@
 //
-//  AMPaymentStatus.swift
+//  AMEnvironment.swift
 //  AmadeusCheckout
 //
 //  Created by Yann Armelin on 24/04/2019.

@@ -17,6 +17,7 @@ class ExpiryPickerView: UIPickerView, BindableView {
     }
     var selectedMonth = 0
     var selectedYear = 0
+    var expiryPickerPresentationStyle = AMExpiryPickerMonthStyle.numberAndText
 
     // This field contains the expected height of the expiry picker,
     // so that it can be aligned with other types of keyboards.
@@ -89,11 +90,19 @@ class ExpiryPickerView: UIPickerView, BindableView {
     }()
     
     
-    static var months: [String] = {
-        var months = ["Month".localize(type: .hint)]
+    static var months: [AMExpiryPickerMonthStyle:[String]] = {
+        let monthLabel = "Month".localize(type: .hint)
+        var months = [
+            AMExpiryPickerMonthStyle.numberAndText:[monthLabel],
+            AMExpiryPickerMonthStyle.numberOnly:[monthLabel],
+            AMExpiryPickerMonthStyle.textOnly:[monthLabel]
+        ]
         for i in 1...12 {
-            var monthNumber = "\(i<10 ?"0":"")\(i)"
-            months.append("\(monthNumber) - \(Translator.monthLocalName(month: i))")
+            let monthNumber = "\(i<10 ?"0":"")\(i)"
+            let monthLabel = Translator.monthLocalName(month: i)
+            months[AMExpiryPickerMonthStyle.numberAndText]!.append("\(monthNumber) - \(Translator.monthLocalName(month: i))")
+            months[AMExpiryPickerMonthStyle.numberOnly]!.append(monthNumber)
+            months[AMExpiryPickerMonthStyle.textOnly]!.append(Translator.monthLocalName(month: i))
         }
         return months
     }()
@@ -135,7 +144,7 @@ extension ExpiryPickerView: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView,
                     numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
-            return ExpiryPickerView.months.count
+            return ExpiryPickerView.months[self.expiryPickerPresentationStyle]!.count
         } else {
             return ExpiryPickerView.years.count
         }
@@ -144,7 +153,7 @@ extension ExpiryPickerView: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString?
     {
         return NSAttributedString(
-            string: component == 0 ? ExpiryPickerView.months[row] : ExpiryPickerView.years[row] ,
+            string: component == 0 ? ExpiryPickerView.months[self.expiryPickerPresentationStyle]![row] : ExpiryPickerView.years[row] ,
             attributes: row == 0 ? ExpiryPickerView.headerAttributes : ExpiryPickerView.rowAttributes
         )
     }

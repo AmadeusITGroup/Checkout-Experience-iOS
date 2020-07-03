@@ -39,6 +39,7 @@
 		6632A703225F585E008019AD /* PaymentPageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632A702225F585E008019AD /* PaymentPageDataModel.swift */; };
 		6632A705225F66D9008019AD /* CreditCardVendorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632A704225F66D9008019AD /* CreditCardVendorViewController.swift */; };
 		6632A707225F816A008019AD /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6632A706225F816A008019AD /* Media.xcassets */; };
+		663F1D5924ADD95D00C380B9 /* AMExpiryPickerMonthStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F1D5824ADD95D00C380B9 /* AMExpiryPickerMonthStyle.swift */; };
 		6647200E22F9A1A200DEC172 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647200D22F9A1A200DEC172 /* Translator.swift */; };
 		664B5D7D237BF10F00CAA3C8 /* AmountBreakdownPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B5D7C237BF10E00CAA3C8 /* AmountBreakdownPopoverController.swift */; };
 		664EE50F2357417B0035A991 /* TestingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664EE50E2357417B0035A991 /* TestingUtils.swift */; };
@@ -156,6 +157,7 @@
 		6632A702225F585E008019AD /* PaymentPageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageDataModel.swift; sourceTree = "<group>"; };
 		6632A704225F66D9008019AD /* CreditCardVendorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardVendorViewController.swift; sourceTree = "<group>"; };
 		6632A706225F816A008019AD /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		663F1D5824ADD95D00C380B9 /* AMExpiryPickerMonthStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMExpiryPickerMonthStyle.swift; sourceTree = "<group>"; };
 		6647200D22F9A1A200DEC172 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		664B5D7C237BF10E00CAA3C8 /* AmountBreakdownPopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountBreakdownPopoverController.swift; sourceTree = "<group>"; };
 		664EE50E2357417B0035A991 /* TestingUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingUtils.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 				66D6F4032270587500076C83 /* AMPaymentStatus.swift */,
 				66A9F3F72316AFC5002DF637 /* AMError.swift */,
 				66D6F40B227064DF00076C83 /* AMEnvironment.swift */,
+				663F1D5824ADD95D00C380B9 /* AMExpiryPickerMonthStyle.swift */,
 				66D6F4052270587F00076C83 /* AMPaymentMethodType.swift */,
 				66D6F4092270589500076C83 /* AMPaymentMethod.swift */,
 				66D6F4072270588900076C83 /* AMCheckoutOptions.swift */,
@@ -756,6 +759,7 @@
 				6675E3202265AC1600E7FFB9 /* StringUtils.swift in Sources */,
 				66A9F3F623169C63002DF637 /* ErrorUtils.swift in Sources */,
 				6698D5B822DC7BB9000D535B /* IconViewFactory.swift in Sources */,
+				663F1D5924ADD95D00C380B9 /* AMExpiryPickerMonthStyle.swift in Sources */,
 				664EE50F2357417B0035A991 /* TestingUtils.swift in Sources */,
 				66D48A9C22D63C080004CE53 /* BinTableCache.swift in Sources */,
 				66D6F4042270587500076C83 /* AMPaymentStatus.swift in Sources */,

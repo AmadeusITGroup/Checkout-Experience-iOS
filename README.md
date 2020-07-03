@@ -30,7 +30,7 @@ Then, right before starting the checkout process, you need to retrieve a PPID fr
 Add this line to your *Podfile*
 ```
 use_frameworks!
-pod 'AmadeusCheckout', :git => 'https://github.com/AmadeusITGroup/Checkout-Experience-iOS.git', :tag => '<version>'
+pod 'AmadeusCheckout/Core', :git => 'https://github.com/AmadeusITGroup/Checkout-Experience-iOS.git', :tag => '<version>'
 ```
 
 Then run the following command:
@@ -186,11 +186,12 @@ You can configure the appearance, by setting the following properties on the `AM
 |---|---|---|
 | `termsAndConditions` | `Array` of `AMTermsAndConditions` | List of terms and conditions URLs. If at least one is provided, the user will have to tick a terms & conditions checkbox (for payment cards only). If you provide several links, user will be able to open them one by one, in that case please provide a relevant label for each link. |
 | `bookingDetails` | `AMBookingDetails` | List of passengers and/or flights, to be displayed on Credit Card form. If no passenger list or flight list is provided, the corresponding section won't be displayed. |
-| `amountBreakdown` | `Array` of `AMAmountDetails` |  |
-| `displayPayButtonOnTop` | `Boolean` | Also display the pay button inside the navigation bar  |
-| `dynamicVendor` | `Boolean` | Automatically detect the card type instead of letting the user choosing it |
-| `displayCvvHelp` | `Boolean` | Display a help button next to CVV label  |
+| `amountBreakdown` | `Array` of `AMAmountDetails` | List of amounts and labels to display in the amount breakdown pop-up. If provided list is empty, and no payment fee applies, the amount breakdown feature is automatically disabled.  |
+| `displayPayButtonOnTop` | `Boolean` | Also display the pay button inside the navigation bar.  |
+| `dynamicVendor` | `Boolean` | Automatically detect the card type instead of letting the user choosing it. |
+| `displayCvvHelp` | `Boolean` | Display a help button next to CVV label.  |
 | `paymentControllerPresentationStyle` | `UIModalPresentationStyle` | Presentation style used for the payment controller. The following values can be used: `fullScreen`, `pageSheet` or `formSheet` . |
+| `expiryPickerMonthStyle` | `AMExpiryPickerMonthStyle` |  Presentation style of month in expiry picker: `textOnly`, `numberOnly` or `numberAndText`. |
 
 #### Callback Scheme
 If your setup includes an alternative method of payment that may redirect to a third party application or website, you have to set-up a callback scheme.

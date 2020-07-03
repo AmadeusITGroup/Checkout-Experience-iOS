@@ -57,6 +57,10 @@ class CreditCardViewController: UITableViewController, KeyboardToolbarDelegate, 
         keyboardToolbar = KeyboardToolbar()
         keyboardToolbar.toolBarDelegate = self
         
+        if let monthStyle = ctx?.options.expiryPickerMonthStyle {
+            expiryPicker.expiryPickerPresentationStyle = monthStyle
+        }
+        
         payToolbar = CreditCardToolbar(
             termsAndConditions:(ctx?.options.termsAndConditions) ?? [],
             enableBreakdownButton: (ctx?.options.amountBreakdown.count ?? 0)>0 || (ctx?.dataModel?.calculateObFee ?? false),

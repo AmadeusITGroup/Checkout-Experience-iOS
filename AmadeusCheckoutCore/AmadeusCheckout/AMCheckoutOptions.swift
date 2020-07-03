@@ -83,6 +83,7 @@ public class AMCheckoutOptions : NSObject {
     @objc public var bookingDetails: AMBookingDetails?
     @objc public var amountBreakdown: [AMAmountDetails] = []
     @objc public var paymentControllerPresentationStyle: UIModalPresentationStyle = .pageSheet
+    @objc public var expiryPickerMonthStyle: AMExpiryPickerMonthStyle = .numberAndText
     
     
     // This should be overriden by application if a redirection

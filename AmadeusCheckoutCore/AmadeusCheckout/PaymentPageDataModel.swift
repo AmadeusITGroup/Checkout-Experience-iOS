@@ -403,7 +403,7 @@ class CreditCardVendor: NSObject {
     init(_ jsonData : JSON) {
         self.id = jsonData["id"].stringValue
         self.name = jsonData["name"].stringValue
-        self.hasLuhn = jsonData["luhn"].stringValue == "true"
+        self.hasLuhn = jsonData["luhn"].stringValue != "false"
         self.has3ds = jsonData["3dsecure"].stringValue == "true"
     }
 }

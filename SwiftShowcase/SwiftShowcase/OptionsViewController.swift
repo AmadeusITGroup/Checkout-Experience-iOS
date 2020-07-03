@@ -44,6 +44,7 @@ class OptionsViewController: UIViewController {
     @IBOutlet var emphasisFontSizeSlider: UISlider!
     @IBOutlet var emphasisFontSizeLabel: UILabel!
     @IBOutlet var presentationStyleControl: UISegmentedControl!
+    @IBOutlet var expiryPickerMonthStyleControl: UISegmentedControl!
     
     @IBOutlet var termsAndConditionsNumberControl: UISegmentedControl!
     @IBOutlet var termsAndConditionsSizeControl: UISegmentedControl!
@@ -91,6 +92,11 @@ class OptionsViewController: UIViewController {
             UIModalPresentationStyle.formSheet,
             UIModalPresentationStyle.fullScreen
             ][presentationStyleControl.selectedSegmentIndex]
+        opt.expiryPickerMonthStyle = [
+            AMExpiryPickerMonthStyle.numberAndText,
+            AMExpiryPickerMonthStyle.numberOnly,
+            AMExpiryPickerMonthStyle.textOnly,
+            ][expiryPickerMonthStyleControl.selectedSegmentIndex]
         
         opt.appCallbackScheme = appCallbackSchemeField.text ?? ""
         

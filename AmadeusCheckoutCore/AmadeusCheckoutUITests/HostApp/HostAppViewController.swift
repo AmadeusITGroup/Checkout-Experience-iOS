@@ -47,6 +47,7 @@ class HostAppViewController: UIViewController, AMCheckoutDelegate {
         case .cancellation:
             print("Host application: Payment didFinishWithStatus 'cancellation'")
             resultField.text = "Cancellation"
+        default: break
         }
         
         checkoutCtx = nil
