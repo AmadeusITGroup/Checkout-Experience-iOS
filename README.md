@@ -193,6 +193,21 @@ You can configure the appearance, by setting the following properties on the `AM
 | `paymentControllerPresentationStyle` | `UIModalPresentationStyle` | Presentation style used for the payment controller. The following values can be used: `fullScreen`, `pageSheet` or `formSheet` . |
 | `expiryPickerMonthStyle` | `AMExpiryPickerMonthStyle` |  Presentation style of month in expiry picker: `textOnly`, `numberOnly` or `numberAndText`. |
 
+#### Localization
+The SDK comes with a full set of localizations, in various languages. Nonetheless, any label visible on screen can be modified.
+
+Calls the `AMCheckoutLabels.overrideLocalizableString` function, before context initialization, for all labels that need to be customized.
+The full list of customizable labels is available in [the following file](./AmadeusCheckoutCore/AmadeusCheckout/Resources/en.lproj/Localizable.strings).
+
+>Swift
+```swift
+AMCheckoutLabels.overrideLocalizableString("label_loading", withValue: "Please wait :)")
+```
+> Objective-C
+```objectivec
+[AMCheckoutLabels overrideLocalizableString:@"label_loading" withValue: @"Please wait :)"];
+```
+
 #### Callback Scheme
 If your setup includes an alternative method of payment that may redirect to a third party application or website, you have to set-up a callback scheme.
 This scheme will be used to go back to your application when the external action is done.

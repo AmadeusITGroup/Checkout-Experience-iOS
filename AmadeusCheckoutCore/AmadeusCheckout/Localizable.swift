@@ -19,20 +19,19 @@ enum LocalizableType {
 
 extension String {
     func localize(type: LocalizableType = .default) -> String{
+        var key = ""
         switch type {
-        case .label:
-            return FileTools.mainBundle.localizedString(forKey: "label_"+self, value: nil, table: nil)
-        case .button:
-            return FileTools.mainBundle.localizedString(forKey: "button_"+self, value: nil, table: nil)
-        case .errorField:
-            return FileTools.mainBundle.localizedString(forKey: "error_field_"+self, value: nil, table: nil)
-        case .error:
-            return FileTools.mainBundle.localizedString(forKey: "label_error_"+self, value: nil, table: nil)
-        case .hint:
-            return FileTools.mainBundle.localizedString(forKey: "p"+self, value: nil, table: nil)
-        default:
-            return FileTools.mainBundle.localizedString(forKey: self, value: nil, table: nil)
+        case .label: key = "label_"+self
+        case .button: key = "button_"+self
+        case .errorField: key = "error_field_"+self
+        case .error: key =  "label_error_"+self
+        case .hint: key = "p"+self
+        default: key =  self
         }
+        if let overridenLabel = AMCheckoutLabels.getOverridenLocalizableString(forKey: key) {
+            return overridenLabel
+        }
+        return FileTools.mainBundle.localizedString(forKey: key, value: nil, table: nil)
     }
 }
 

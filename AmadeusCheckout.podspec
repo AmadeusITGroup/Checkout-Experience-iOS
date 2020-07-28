@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name          = "AmadeusCheckout"
-  spec.version       = "1.0.3"
+  spec.version       = "1.0.4"
   spec.summary       = "Integration of Amadeus Checkout for iOS."
   spec.homepage      = "https://amadeus.com/en/business-function/payments"
   spec.license       = { :type => "MIT", :file => "LICENSE" }

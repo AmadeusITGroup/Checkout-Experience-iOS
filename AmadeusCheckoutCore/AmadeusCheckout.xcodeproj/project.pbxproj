@@ -64,6 +64,7 @@
 		6675E32E2265AD8800E7FFB9 /* BoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675E32D2265AD8800E7FFB9 /* BoundLabel.swift */; };
 		6675E3312265BF5B00E7FFB9 /* BoundTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675E32F2265BF5B00E7FFB9 /* BoundTextFieldTests.swift */; };
 		6675E3322265BF5B00E7FFB9 /* StringUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675E3302265BF5B00E7FFB9 /* StringUtilsTests.swift */; };
+		667A29F324B8BD4F008C43D3 /* AMCheckoutLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667A29F224B8BD4F008C43D3 /* AMCheckoutLabels.swift */; };
 		667E9DD3225B98D800DFA4AA /* strip-frameworks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 667E9DD2225B981200DFA4AA /* strip-frameworks.sh */; };
 		66822D8A2355A68500249356 /* CreditCardFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689D78B2354B800001D869E /* CreditCardFlow.swift */; };
 		66869BDE225C9663007D8CC7 /* CheckoutStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66869BDD225C9663007D8CC7 /* CheckoutStoryboard.storyboard */; };
@@ -182,6 +183,7 @@
 		6675E32D2265AD8800E7FFB9 /* BoundLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundLabel.swift; sourceTree = "<group>"; };
 		6675E32F2265BF5B00E7FFB9 /* BoundTextFieldTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundTextFieldTests.swift; sourceTree = "<group>"; };
 		6675E3302265BF5B00E7FFB9 /* StringUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtilsTests.swift; sourceTree = "<group>"; };
+		667A29F224B8BD4F008C43D3 /* AMCheckoutLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCheckoutLabels.swift; sourceTree = "<group>"; };
 		667E9DD2225B981200DFA4AA /* strip-frameworks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "strip-frameworks.sh"; sourceTree = "<group>"; };
 		66822D802355A65E00249356 /* AmadeusCheckoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmadeusCheckoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66822D842355A65E00249356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 				66D6F4052270587F00076C83 /* AMPaymentMethodType.swift */,
 				66D6F4092270589500076C83 /* AMPaymentMethod.swift */,
 				66D6F4072270588900076C83 /* AMCheckoutOptions.swift */,
+				667A29F224B8BD4F008C43D3 /* AMCheckoutLabels.swift */,
 				6696E064225643A60059F4B2 /* AMCheckoutContext.swift */,
 				664EE50E2357417B0035A991 /* TestingUtils.swift */,
 				66BF601823CC81A300F06B77 /* Plugins */,
@@ -754,6 +757,7 @@
 				662AE72923152310009150A3 /* NetworkTaskQueue.swift in Sources */,
 				662E895723C8824500F33B28 /* AMCheckoutPluginManager.swift in Sources */,
 				664F658523215A730007E6A6 /* CreditCardToolbar.swift in Sources */,
+				667A29F324B8BD4F008C43D3 /* AMCheckoutLabels.swift in Sources */,
 				66317A2422FB0C340043D3D5 /* TableModel.swift in Sources */,
 				66B7052B23842C4300A059CB /* CreditCardCvvHelpViewController.swift in Sources */,
 				6675E3202265AC1600E7FFB9 /* StringUtils.swift in Sources */,
