@@ -77,6 +77,9 @@ class ViewController: UIViewController, AMCheckoutDelegate {
         case .cancellation:
             print("Host application: Payment didFinishWithStatus 'cancellation'")
             resultField.text = "Cancellation"
+        @unknown default:
+            print("Host application: Payment didFinishWithStatus unknown")
+            resultField.text = "Unknown status"
         }
         
         checkoutCtx = nil

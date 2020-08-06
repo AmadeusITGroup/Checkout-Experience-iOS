@@ -58,7 +58,7 @@
                                             <accessibility key="accessibilityConfiguration" identifier="card_number_input"/>
                                             <color key="textColor" red="0.039215686274509803" green="0.44705882352941173" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="cc-number"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="ASCIICapableNumberPad" textContentType="cc-number"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jl7-tG-bEq">
                                             <rect key="frame" x="16" y="0.0" width="394" height="37"/>

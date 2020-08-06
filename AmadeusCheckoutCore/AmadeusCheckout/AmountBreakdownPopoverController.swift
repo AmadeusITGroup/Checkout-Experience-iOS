@@ -105,7 +105,7 @@ class AmountBreakdownPopoverController: UIViewController, UITableViewDelegate, U
         }
         
         cell?.textLabel?.text = amountBreakdown[indexPath.row].label
-        cell?.detailTextLabel?.text = Translator.formatAmount(amountBreakdown[indexPath.row].amount, currency: currency)
+        cell?.detailTextLabel?.text = Translator.instance.formatAmount(amountBreakdown[indexPath.row].amount, currency: currency, style: theme.amountFormatterStyle)
         
         return cell!
     }

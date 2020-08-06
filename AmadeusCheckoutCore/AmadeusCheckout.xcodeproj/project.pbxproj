@@ -53,6 +53,9 @@
 		6659ED0223C71D9B00E28849 /* AmadeusCheckout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6696DFF9225636DA0059F4B2 /* AmadeusCheckout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6659ED0E23C72AF400E28849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6659ED0D23C72AF400E28849 /* LaunchScreen.storyboard */; };
 		6659ED1123C72B4200E28849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6659ED1023C72B4200E28849 /* Main.storyboard */; };
+		666A54A624D841D900BDF30F /* AMTransparentBackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666A54A524D841D900BDF30F /* AMTransparentBackgroundStyle.swift */; };
+		666A54A824D8477C00BDF30F /* AMAmountFormatterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666A54A724D8477C00BDF30F /* AMAmountFormatterStyle.swift */; };
+		666A54AA24D84BE200BDF30F /* TranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666A54A924D84BE200BDF30F /* TranslatorTests.swift */; };
 		667384DF231FA6EB00014874 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667384DE231FA6EB00014874 /* Checkbox.swift */; };
 		6675E31A2265AC0000E7FFB9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675E3162265AC0000E7FFB9 /* SwiftyJSON.swift */; };
 		6675E3202265AC1600E7FFB9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675E31E2265AC1600E7FFB9 /* StringUtils.swift */; };
@@ -172,6 +175,9 @@
 		6659ED0D23C72AF400E28849 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6659ED1023C72B4200E28849 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		666891FF2302898C00372846 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		666A54A524D841D900BDF30F /* AMTransparentBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTransparentBackgroundStyle.swift; sourceTree = "<group>"; };
+		666A54A724D8477C00BDF30F /* AMAmountFormatterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMAmountFormatterStyle.swift; sourceTree = "<group>"; };
+		666A54A924D84BE200BDF30F /* TranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorTests.swift; sourceTree = "<group>"; };
 		667384DE231FA6EB00014874 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		6675E3162265AC0000E7FFB9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		6675E31E2265AC1600E7FFB9 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
@@ -268,6 +274,7 @@
 				660D5FA222E07265001B7DC1 /* SwiftyJsonTests.swift */,
 				CA98C3EC22BA5A3A000A99BF /* ValidatorsTest.swift */,
 				6675E3302265BF5B00E7FFB9 /* StringUtilsTests.swift */,
+				666A54A924D84BE200BDF30F /* TranslatorTests.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -500,6 +507,8 @@
 				66A9F3F72316AFC5002DF637 /* AMError.swift */,
 				66D6F40B227064DF00076C83 /* AMEnvironment.swift */,
 				663F1D5824ADD95D00C380B9 /* AMExpiryPickerMonthStyle.swift */,
+				666A54A724D8477C00BDF30F /* AMAmountFormatterStyle.swift */,
+				666A54A524D841D900BDF30F /* AMTransparentBackgroundStyle.swift */,
 				66D6F4052270587F00076C83 /* AMPaymentMethodType.swift */,
 				66D6F4092270589500076C83 /* AMPaymentMethod.swift */,
 				66D6F4072270588900076C83 /* AMCheckoutOptions.swift */,
@@ -737,6 +746,7 @@
 				664B5D7D237BF10F00CAA3C8 /* AmountBreakdownPopoverController.swift in Sources */,
 				CAF0F24122B13E7E00F6CE81 /* Localizable.swift in Sources */,
 				66D6F40A2270589500076C83 /* AMPaymentMethod.swift in Sources */,
+				666A54A624D841D900BDF30F /* AMTransparentBackgroundStyle.swift in Sources */,
 				6632A703225F585E008019AD /* PaymentPageDataModel.swift in Sources */,
 				6626802B22A8F0C800899823 /* StoryboardConstants.swift in Sources */,
 				6675E3232265AC7D00E7FFB9 /* BackendServices.swift in Sources */,
@@ -773,6 +783,7 @@
 				6647200E22F9A1A200DEC172 /* Translator.swift in Sources */,
 				6698D5BA22DCB9CC000D535B /* ColorUtils.swift in Sources */,
 				665756B022DDA94E002FE920 /* StyledTableViewCell.swift in Sources */,
+				666A54A824D8477C00BDF30F /* AMAmountFormatterStyle.swift in Sources */,
 				6696E065225643A60059F4B2 /* AMCheckoutContext.swift in Sources */,
 				66080FBA230D5F2700ECFFE1 /* TextFieldWithMessage.swift in Sources */,
 				66317A2A22FC160E0043D3D5 /* CreditCardBindingFactory.swift in Sources */,
@@ -798,6 +809,7 @@
 				CA98C3ED22BA5A3A000A99BF /* ValidatorsTest.swift in Sources */,
 				6689D78A2354B5DD001D869E /* BookingDetailsViewTests.swift in Sources */,
 				6675E3322265BF5B00E7FFB9 /* StringUtilsTests.swift in Sources */,
+				666A54AA24D84BE200BDF30F /* TranslatorTests.swift in Sources */,
 				6619BE2523015294004748F1 /* WebRedirectionViewControllerTests.swift in Sources */,
 				660D5FA322E07265001B7DC1 /* SwiftyJsonTests.swift in Sources */,
 			);

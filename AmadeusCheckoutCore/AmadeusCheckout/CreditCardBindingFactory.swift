@@ -11,11 +11,11 @@ import Foundation
 
 class CreditCardBindingFactory {
     // MARK: Internal helpers
-    private func createAmountBinding<ModelType:NSObject, ValueType>(_ target:ModelType, keyPath: KeyPath<ModelType, ValueType>) -> [DataModelBinding] {
+    private func createAmountBinding<ModelType:NSObject, ValueType>(_ target:ModelType, keyPath: KeyPath<ModelType, ValueType>, theme: Theme) -> [DataModelBinding] {
         let binding = DataModelBinding(target, keyPath: keyPath)
         binding.genericFormatter = {(amount) in
             if let amount = amount as? Amount {
-                return Translator.formatAmount(amount.value, currency: amount.currency)
+                return Translator.instance.formatAmount(amount.value, currency: amount.currency, style: theme.amountFormatterStyle)
             }
             return ""
         }
@@ -28,11 +28,11 @@ class CreditCardBindingFactory {
     }
     
     // MARK: Public binding initializers
-    func createAmountBindings(rootModel: PaymentPageDataModel) -> [DataModelBinding] {
-        return createAmountBinding(rootModel, keyPath: \.totalAmount)
+    func createAmountBindings(rootModel: PaymentPageDataModel, theme: Theme) -> [DataModelBinding] {
+        return createAmountBinding(rootModel, keyPath: \.totalAmount, theme: theme)
     }
-    func createObfeesBindings(rootModel: PaymentPageDataModel) -> [DataModelBinding] {
-        return createAmountBinding(rootModel, keyPath: \.obFeeAmount)
+    func createObfeesBindings(rootModel: PaymentPageDataModel, theme: Theme) -> [DataModelBinding] {
+        return createAmountBinding(rootModel, keyPath: \.obFeeAmount, theme: theme)
     }
     func createVendorBindings(model: CreditCardPaymentMethod) -> [DataModelBinding] {
         let binding = DataModelBinding(model, keyPath: \.vendor.id)
@@ -50,7 +50,7 @@ class CreditCardBindingFactory {
     func createCardHoldernameBindings(model: CreditCardPaymentMethod) -> [DataModelBinding] {
         return createFieldBinding(model, keyPath: \.cardHolderName, required: true, minLen: nil, maxLen: 50)
     }
-    func createCardNumberBindings(rootModel: PaymentPageDataModel, model: CreditCardPaymentMethod, dynamic: Bool) -> [DataModelBinding] {
+    func createCardNumberBindings(rootModel: PaymentPageDataModel, model: CreditCardPaymentMethod, dynamic: Bool, theme: Theme) -> [DataModelBinding] {
         let ccnBinding = DataModelBinding(model, keyPath: \.creditCardNumber)
         ccnBinding.validator = ValidatorFactory.ccNum.create()
         ccnBinding.formatter = { CardFormatter.format($0) }
@@ -59,7 +59,7 @@ class CreditCardBindingFactory {
         let obFeesBinding = DataModelBinding(rootModel, keyPath: \.obFeeAmount)
         obFeesBinding.genericFormatter = {(amount) in
             if let amount = amount as? Amount, amount.value>0 {
-                let fees = Translator.formatAmount(amount.value, currency: amount.currency)
+                let fees = Translator.instance.formatAmount(amount.value, currency: amount.currency, style: theme.amountFormatterStyle)
                 return "obFees".localize(type: .label).replacingOccurrences(of: "{0}", with: fees)
             }
             return ""

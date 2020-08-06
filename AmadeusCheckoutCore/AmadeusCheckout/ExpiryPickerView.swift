@@ -99,10 +99,10 @@ class ExpiryPickerView: UIPickerView, BindableView {
         ]
         for i in 1...12 {
             let monthNumber = "\(i<10 ?"0":"")\(i)"
-            let monthLabel = Translator.monthLocalName(month: i)
-            months[AMExpiryPickerMonthStyle.numberAndText]!.append("\(monthNumber) - \(Translator.monthLocalName(month: i))")
+            let monthLabel = Translator.instance.monthLocalName(month: i)
+            months[AMExpiryPickerMonthStyle.numberAndText]!.append("\(monthNumber) - \(Translator.instance.monthLocalName(month: i))")
             months[AMExpiryPickerMonthStyle.numberOnly]!.append(monthNumber)
-            months[AMExpiryPickerMonthStyle.textOnly]!.append(Translator.monthLocalName(month: i))
+            months[AMExpiryPickerMonthStyle.textOnly]!.append(Translator.instance.monthLocalName(month: i))
         }
         return months
     }()

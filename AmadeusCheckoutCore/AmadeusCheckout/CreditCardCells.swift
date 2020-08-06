@@ -119,6 +119,7 @@ class CardNumberTableViewCell: InputTextViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         vendorImage?.bundle = FileTools.mainBundle
+        inputTextField.returnKeyType = .default
     }
     // MARK: Initializer
     required init?(coder aDecoder: NSCoder) {

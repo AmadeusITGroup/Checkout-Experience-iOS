@@ -179,6 +179,7 @@ You can configure the appearance, by setting the following properties on the `AM
 | `errorColor` | `UIColor` | Color for error messages and icons |
 | `font` | `UIFont` | Font for input, labels, errors and messages |
 | `emphasisFont` | `UIFont` | Font for navigation bar title |
+| `payToolbarBackgroundStyle` | `AMTransparentBackgroundStyle` |  Background style of the pay toolbar: `auto`, `dark` or `light`. Choose `auto` to align with current iOS dark or light mode. Default: `auto`. |
 
 #### Options
 
@@ -192,6 +193,7 @@ You can configure the appearance, by setting the following properties on the `AM
 | `displayCvvHelp` | `Boolean` | Display a help button next to CVV label.  |
 | `paymentControllerPresentationStyle` | `UIModalPresentationStyle` | Presentation style used for the payment controller. The following values can be used: `fullScreen`, `pageSheet` or `formSheet` . |
 | `expiryPickerMonthStyle` | `AMExpiryPickerMonthStyle` |  Presentation style of month in expiry picker: `textOnly`, `numberOnly` or `numberAndText`. |
+| `amountFormatterStyle` | `AMAmountFormatterStyle` | Amount formatter style: `localeBased`, `currencyCodeOnLeft` or `currencyCodeOnRight`. Default: `localeBased` . |
 
 #### Localization
 The SDK comes with a full set of localizations, in various languages. Nonetheless, any label visible on screen can be modified.

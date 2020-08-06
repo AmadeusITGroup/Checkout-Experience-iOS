@@ -38,6 +38,11 @@ class Theme {
     }()
     static let defaultFont = UIFont.systemFont(ofSize: 17.0)
     static let defaultEmphasisFont = UIFont.systemFont(ofSize: 17.0)
+    static let defaultPayToolbarBackgroundStyle: UIBlurEffect.Style = {
+        if #available(iOS 11.0, *) { return .regular }
+        else { return .light }
+    }()
+    static let defaultAmountFormatterStyle = AMAmountFormatterStyle.localeBased
     
     var primaryBackgroundColor = Theme.defaultPrimaryBackgroundColor
     var secondaryBackgroundColor = Theme.defaultSecondaryBackgroundColor
@@ -47,6 +52,8 @@ class Theme {
     var errorColor = Theme.defaultErrorColor
     var font = Theme.defaultFont
     var emphasisFont = Theme.defaultEmphasisFont
+    var payToolbarBackgroundStyle = Theme.defaultPayToolbarBackgroundStyle
+    var amountFormatterStyle: AMAmountFormatterStyle = Theme.defaultAmountFormatterStyle
     
     init() {}
     
@@ -59,6 +66,13 @@ class Theme {
         errorColor = options.errorColor ?? Theme.defaultErrorColor
         font = options.font ?? Theme.defaultFont
         emphasisFont = options.emphasisFont ?? Theme.defaultEmphasisFont
+        amountFormatterStyle = options.amountFormatterStyle
+        
+        switch options.payToolbarBackgroundStyle {
+        case .dark: payToolbarBackgroundStyle = .dark
+        case .light: payToolbarBackgroundStyle = .light
+        default: payToolbarBackgroundStyle = Theme.defaultPayToolbarBackgroundStyle
+        }
     }
     
     var primaryLighterForegroundColor: UIColor? {

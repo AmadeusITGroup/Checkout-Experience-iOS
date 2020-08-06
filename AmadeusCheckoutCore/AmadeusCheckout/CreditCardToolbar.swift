@@ -68,11 +68,7 @@ class CreditCardToolbar: UIView, SFSafariViewControllerDelegate {
     private func initContentWrapper() {
         // Content wrapper
         contentWrapper = UIView(frame: CGRect(x:0,y:0,width:400, height:toolbarHeight))
-        var style: UIBlurEffect.Style = .light
-        if #available(iOS 11.0, *) {
-            style = .regular
-        }
-        let blurEffect = UIBlurEffect(style: style)
+        let blurEffect = UIBlurEffect(style: theme.payToolbarBackgroundStyle)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.translatesAutoresizingMaskIntoConstraints = false
         insertSubview(blurView, at: 0)
@@ -251,7 +247,7 @@ class CreditCardToolbar: UIView, SFSafariViewControllerDelegate {
     }
 
     func setAmounts(total amount : Double, currency: String, breakdown: [AMAmountDetails]) {
-        let totalStr = Translator.formatAmount(amount, currency: currency)
+        let totalStr = Translator.instance.formatAmount(amount, currency: currency, style: theme.amountFormatterStyle)
         amountButton.setTitle("total".localize(type: .button).replacingOccurrences(of: "{0}", with: totalStr), for: .normal)
         amountBreakdownPopover.amountBreakdown = breakdown
         amountBreakdownPopover.currency = currency

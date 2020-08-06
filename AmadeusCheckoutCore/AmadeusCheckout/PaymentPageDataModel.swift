@@ -62,7 +62,7 @@ class PaymentPageDataModel: NSObject {
                     
                     for country in response["data","address_config","DEFAULT_CONFIG",0,"selectContent"].arrayValue {
                         let code = country["value"].stringValue
-                        let label = Translator.countryLocalName(code: code) ?? country["label_code"].stringValue
+                        let label = Translator.instance.countryLocalName(code: code) ?? country["label_code"].stringValue
                         countries.append((code:country["value"].stringValue, label:label))
                     }
                     countries.sort { $0.label < $1.label }

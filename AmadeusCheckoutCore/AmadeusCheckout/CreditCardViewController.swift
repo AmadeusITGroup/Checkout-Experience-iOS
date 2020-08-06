@@ -219,7 +219,7 @@ class CreditCardViewController: UITableViewController, KeyboardToolbarDelegate, 
             tableModel.setBindings(forCell: .cardVendor, newBindings: bindingFactory.createVendorBindings(model: model))
             tableModel.setBindings(forCell: .cardExpiry, newBindings: bindingFactory.createExpiryBindings(model: model))
             tableModel.setBindings(forCell: .cardholderName, newBindings: bindingFactory.createCardHoldernameBindings(model: model))
-            tableModel.setBindings(forCell: .cardNumber, newBindings: bindingFactory.createCardNumberBindings(rootModel: rootModel, model: model, dynamic: ctx?.options?.dynamicVendor == true))
+            tableModel.setBindings(forCell: .cardNumber, newBindings: bindingFactory.createCardNumberBindings(rootModel: rootModel, model: model, dynamic: ctx?.options?.dynamicVendor == true, theme: theme))
             tableModel.setBindings(forCell: .cardCvv, newBindings: bindingFactory.createCvvBindings(model: model))
 
             

@@ -45,6 +45,8 @@ class OptionsViewController: UIViewController {
     @IBOutlet var emphasisFontSizeLabel: UILabel!
     @IBOutlet var presentationStyleControl: UISegmentedControl!
     @IBOutlet var expiryPickerMonthStyleControl: UISegmentedControl!
+    @IBOutlet var amountFormatterStyleControl: UISegmentedControl!
+    @IBOutlet var payToolbarBackgroundStyleControl: UISegmentedControl!
     
     @IBOutlet var termsAndConditionsNumberControl: UISegmentedControl!
     @IBOutlet var termsAndConditionsSizeControl: UISegmentedControl!
@@ -97,6 +99,16 @@ class OptionsViewController: UIViewController {
             AMExpiryPickerMonthStyle.numberOnly,
             AMExpiryPickerMonthStyle.textOnly,
             ][expiryPickerMonthStyleControl.selectedSegmentIndex]
+        opt.amountFormatterStyle = [
+            AMAmountFormatterStyle.localeBased,
+            AMAmountFormatterStyle.currencyCodeOnLeft,
+            AMAmountFormatterStyle.currencyCodeOnRight,
+            ][amountFormatterStyleControl.selectedSegmentIndex]
+        opt.payToolbarBackgroundStyle = [
+            AMTransparentBackgroundStyle.auto,
+            AMTransparentBackgroundStyle.dark,
+            AMTransparentBackgroundStyle.light,
+            ][payToolbarBackgroundStyleControl.selectedSegmentIndex]
         
         opt.appCallbackScheme = appCallbackSchemeField.text ?? ""
         

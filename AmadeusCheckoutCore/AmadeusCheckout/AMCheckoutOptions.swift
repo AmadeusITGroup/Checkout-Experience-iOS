@@ -84,6 +84,7 @@ public class AMCheckoutOptions : NSObject {
     @objc public var amountBreakdown: [AMAmountDetails] = []
     @objc public var paymentControllerPresentationStyle: UIModalPresentationStyle = .pageSheet
     @objc public var expiryPickerMonthStyle: AMExpiryPickerMonthStyle = .numberAndText
+    @objc public var amountFormatterStyle: AMAmountFormatterStyle = .localeBased
     
     
     // This should be overriden by application if a redirection
@@ -99,6 +100,7 @@ public class AMCheckoutOptions : NSObject {
     @objc public var errorColor: UIColor?
     @objc public var font: UIFont?
     @objc public var emphasisFont: UIFont?
+    @objc public var payToolbarBackgroundStyle: AMTransparentBackgroundStyle = .auto
     
 
     public override init(){}
