@@ -14,7 +14,7 @@ class Translator{
     
     let locale: NSLocale
     let currencyFormatter: NumberFormatter
-    let numberFormatter: NumberFormatter
+    let currencyWithoutSymbolFormatter: NumberFormatter
     let monthLabels: [Int:String]
     let countryLabels: [String:String]
     
@@ -22,7 +22,8 @@ class Translator{
         self.locale = locale
         
         currencyFormatter = Translator.initCurrencyFormatter(withLocale: locale)
-        numberFormatter = Translator.initNumberFormatter(withLocale: locale)
+        currencyWithoutSymbolFormatter = Translator.initCurrencyFormatter(withLocale: locale)
+        currencyWithoutSymbolFormatter.currencySymbol = ""
         monthLabels = Translator.initMonthLabels(withLocale: locale)
         countryLabels = Translator.initCountryLabels(withLocale: locale)
     }
@@ -35,12 +36,6 @@ class Translator{
         return result
     }
     
-    private static func initNumberFormatter(withLocale locale: NSLocale ) -> NumberFormatter {
-        let result = NumberFormatter()
-        result.usesGroupingSeparator = true
-        result.locale = locale as Locale
-        return result
-    }
     
     private static func initCountryLabels(withLocale locale: NSLocale ) -> [String:String] {
         var result :[String:String] = [:]
@@ -81,15 +76,14 @@ class Translator{
     
     func formatAmount(_ amount: Double, currency: String, style: AMAmountFormatterStyle) -> String {
         currencyFormatter.currencyCode = currency
-        
+        currencyWithoutSymbolFormatter.currencyCode = currency
         if style == .currencyCodeOnLeft || style == .currencyCodeOnRight {
-            numberFormatter.minimumFractionDigits = currencyFormatter.minimumFractionDigits
-            numberFormatter.maximumFractionDigits = currencyFormatter.maximumFractionDigits
-            let formattedNumber = numberFormatter.string(from: NSNumber(value: amount)) ?? String(amount)
+            var formattedAmount = currencyWithoutSymbolFormatter.string(from: NSNumber(value: amount)) ?? String(amount)
+            formattedAmount = formattedAmount.trimmingCharacters(in: .whitespaces)
             if style == .currencyCodeOnLeft {
-                return "\(currency) \(formattedNumber)"
+                return "\(currency) \(formattedAmount)"
             } else {
-                return "\(formattedNumber) \(currency)"
+                return "\(formattedAmount) \(currency)"
             }
         }
         

@@ -38,14 +38,14 @@ class TranslatorTests: XCTestCase {
     func testFormatAmount() {
         var tr = Translator(withLocale: NSLocale(localeIdentifier: "en_EN"))
         
-        var codeOnLeft = tr.formatAmount(10.0, currency: "USD", style: .currencyCodeOnLeft)
-        XCTAssertEqual(codeOnLeft, "USD 10.00")
+        var codeOnLeft = tr.formatAmount(1110.0, currency: "USD", style: .currencyCodeOnLeft)
+        XCTAssertEqual(codeOnLeft, "USD 1,110.00")
         
-        var codeOnRight = tr.formatAmount(10.0, currency: "USD", style: .currencyCodeOnRight)
-        XCTAssertEqual(codeOnRight, "10.00 USD")
+        var codeOnRight = tr.formatAmount(1110.0, currency: "USD", style: .currencyCodeOnRight)
+        XCTAssertEqual(codeOnRight, "1,110.00 USD")
 
-        var localeBased = tr.formatAmount(10.0, currency: "USD", style: .localeBased)
-        XCTAssertEqual(localeBased, "$10.00")
+        var localeBased = tr.formatAmount(1110.0, currency: "USD", style: .localeBased)
+        XCTAssertEqual(localeBased, "$1,110.00")
 
         
         tr = Translator(withLocale: NSLocale(localeIdentifier: "fr_FR"))
@@ -58,6 +58,17 @@ class TranslatorTests: XCTestCase {
 
         localeBased = tr.formatAmount(25.0, currency: "JPY", style: .localeBased)
         XCTAssertEqual(localeBased, "25\u{00a0}JPY")
+        
+        tr = Translator(withLocale: NSLocale(localeIdentifier: "zh_Hant"))
+        
+        codeOnLeft = tr.formatAmount(2510030, currency: "VND", style: .currencyCodeOnLeft)
+        XCTAssertEqual(codeOnLeft, "VND 2,510,030")
+        
+        codeOnRight = tr.formatAmount(2510030, currency: "VND", style: .currencyCodeOnRight)
+        XCTAssertEqual(codeOnRight, "2,510,030 VND")
+
+        localeBased = tr.formatAmount(2510030, currency: "VND", style: .localeBased)
+        XCTAssertEqual(localeBased, "₫2,510,030")
     }
 
 }
