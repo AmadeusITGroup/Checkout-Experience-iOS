@@ -127,6 +127,7 @@ class WebRedirectionViewController: UIViewController, WKUIDelegate, WKNavigation
             components.queryItems = redirection.params?.map {
                 URLQueryItem(name: $0.key.addingPercentEncoding(withAllowedCharacters: allowedCharacters)!, value: $0.value.addingPercentEncoding(withAllowedCharacters: allowedCharacters))
             }
+            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             request.httpBody = components.query?.data(using: .utf8)
         }
         
