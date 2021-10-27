@@ -21,7 +21,7 @@ The Amadeus Checkout SDK for iOS makes it ease to build the payment experience o
 ## Prerequisites
 
 You need to be registeted as a customer of the [Amadeus Payment Platform](https://amadeus.com/en/business-function/payments/xchange-payment-platform).
-Then, right before starting the checkout process, you need to retrieve a PPID from you server. To do so, your server has to call the `AMA_PAY_PreparePaymentPage` webservice, with your merchant identifier, the currency and the amount to be paid. 
+Then, right before starting the checkout process, you need to retrieve a PPID from you server. To do so, your server has to call the `AMA_PAY_PreparePaymentPage`(XML) or  `POST payment/checkout-forms` (REST) webservice, with your merchant identifier, the currency and the amount to be paid. 
 
 ## Installation
 
@@ -156,13 +156,38 @@ func paymentContext(_ checkoutContext: AMCheckoutContext, didFinishWithStatus st
     // Handle the success here
 }
 ```
+In case of error sent back to your application, the SDK has closed for the current `ppid`. 
+Depending on the error type and the payment status explained below, you will either have to check the status by a server to server call or you can restart the SDK using the same ppid in case of canceled payment.
 
-The `status` contains one of the following values:
-- `success`: the checkout was successful, you can now check the payment status from your back-end  
-- `failure`: the checkout failed
-- `unknown`: the checkout status is unknown, you have to check the payment status from your back-end
-- `cancellation`: the checkout was cancelled by the user
+Types :
 
+- `AMPaymentStatus` is an `enum`:
+    - `success`: the checkout was successful, you can now check the payment status from your server 
+    - `failure`: the checkout failed
+    - `unknown`: the checkout status is unknown, you have to check the payment status from your server
+    - `cancellation`: the checkout was cancelled by the user
+
+- error is of `CheckoutError` class and contains :
+    - `type`: of `AMErrorType`
+    - `feature`: of `AMErrorFeature`
+
+- `AMErrorType` is an `enum`:
+    - `networkFailure`: the SDK can't reach the server due a network/timeout problem
+    - `unexpectedError`: An unexpected error has occured, you need to check the payment status from your server
+    - `paymentError`: The payment has been rejected at authorization time
+    - `sessionTimeout`: The `ppid` has expired and can't be used anymore
+
+- `AMErrorFeature` is an `enum`:
+    - `loadMethodOfPayments` : error occured at load time
+    - `addCreditCard` : error occured at the step of payment with card
+    - `addAlternativeMethodOfPayment` : error occured at the step of payment with alteranative method of payment.
+    - `verifyAfterRedirection` : error occured after 3DS or authentication for alteranative method of payment.
+    - `webViewRedirection` : error occured at redirection time (3DS or authentication)
+    - `binValidation` : error occured at bin check for card number.
+    - `obFeesComputation` : error occured at fees computation time for card number
+    - `none` : error occured and no action was performed
+
+Once the payment has been completed or the SDK closed due to some error, perform a server to server call with the message `AMA_PAY_GetPaymentStatus` (XML) or `GET payment/checkout-forms/{PPID}` (REST) to get the status of the authorisation and other information about it.
 
 ### Customization
 

@@ -23,6 +23,17 @@ import Foundation
     case alternativeMethodOfPaymentCup
     case alternativeMethodOfPaymentWechat
     case alternativeMethodOfPaymentIdeal
+    case alternativeMethodOfPaymentBoost
+    case alternativeMethodOfPaymentCimbclicks
+    case alternativeMethodOfPaymentFpx
+    case alternativeMethodOfPaymentGrabpay
+    case alternativeMethodOfPaymentInstallment
+    case alternativeMethodOfPaymentMaybank
+    case alternativeMethodOfPaymentTouchngo
+    case alternativeMethodOfPaymentHumm
+    case alternativeMethodOfPaymentPoli
+    case alternativeMethodOfPaymentFnpl
+    
     case alternativeMethodOfPayment
     
     static func make(from mop: PaymentMethod) -> AMPaymentMethodType {
@@ -42,6 +53,17 @@ import Foundation
             case "label_amop_cup": return .alternativeMethodOfPaymentCup
             case "label_amop_wechat": return .alternativeMethodOfPaymentWechat
             case "label_amop_ideal": return .alternativeMethodOfPaymentIdeal
+            case "label_amop_boost": return .alternativeMethodOfPaymentBoost
+            case "label_amop_cimbclicks": return .alternativeMethodOfPaymentCimbclicks
+            case "label_amop_fpx": return .alternativeMethodOfPaymentFpx
+            case "label_amop_grabpay": return .alternativeMethodOfPaymentGrabpay
+            case "label_amop_installmentpayment": return .alternativeMethodOfPaymentInstallment
+            case "label_amop_maybank": return .alternativeMethodOfPaymentMaybank
+            case "label_amop_touchngo": return .alternativeMethodOfPaymentTouchngo
+            case "label_amop_humm": return .alternativeMethodOfPaymentHumm
+            case "label_amop_poli": return .alternativeMethodOfPaymentPoli
+            case "label_amop_fnpl": return .alternativeMethodOfPaymentFnpl
+                
             default: return .alternativeMethodOfPayment
             }
         }
@@ -62,6 +84,17 @@ import Foundation
         case .alternativeMethodOfPaymentCup: return "China UnionPay"
         case .alternativeMethodOfPaymentWechat: return "WeChat"
         case .alternativeMethodOfPaymentIdeal: return "iDEAL"
+        case .alternativeMethodOfPaymentBoost: return "Boost"
+        case .alternativeMethodOfPaymentCimbclicks: return "CIMB Clicks"
+        case .alternativeMethodOfPaymentFpx: return "FPX"
+        case .alternativeMethodOfPaymentGrabpay: return "GrabPay"
+        case .alternativeMethodOfPaymentInstallment: return "Instalment payment"
+        case .alternativeMethodOfPaymentMaybank: return "Maybank2u"
+        case .alternativeMethodOfPaymentTouchngo: return "TouchnGO"
+        case .alternativeMethodOfPaymentHumm: return "Humm"
+        case .alternativeMethodOfPaymentPoli: return "Poli"
+        case .alternativeMethodOfPaymentFnpl: return "FlyNow PayLater"
+            
         case .alternativeMethodOfPayment: return "External Payment"
         }
     }
