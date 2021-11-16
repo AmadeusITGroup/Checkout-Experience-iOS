@@ -4,7 +4,7 @@ function print {
 	echo -e "\x1B[95m$1\x1B[0m"
 }
 
-if [ "$1" == "" ]; then
+if [[ "$1" == "" ]]; then
 	print "Usage: ./compute_code_coverage.sh <device-id>"
 	print
 	print "Available devices are:"

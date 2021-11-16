@@ -105,21 +105,21 @@ class WebRedirectionViewController: UIViewController, WKUIDelegate, WKNavigation
     }
     
     func initRedirection(_ redirection: Redirection) {
-        guard #available(iOS 11.0, *), redirection.method == "POST"  else {
-            /** **Workaround for iOS 10 Bug:**
-             * On iOS 10, `WKWebView` is not able to load a POST request that contains
-             * a http body.
-             * Instead we have to load a generated dummy html page, that will do the POST.
-             */
-            initPostRedirectionIOS10Workaround(redirection)
-            return
-        }
-        
         let url = URL(string: redirection.url)!
         var request = URLRequest(url: url)
         if redirection.method == "GET" {
             request.httpMethod = "GET"
         } else {
+            guard #available(iOS 11.0, *) else {
+                /** **Workaround for iOS 10 Bug:**
+                 * On iOS 10, `WKWebView` is not able to load a POST request that contains
+                 * a http body.
+                 * Instead we have to load a generated dummy html page, that will do the POST.
+                 */
+                initPostRedirectionIOS10Workaround(redirection)
+                return
+            }
+            
             request.httpMethod = "POST"
             var components = URLComponents()
             var allowedCharacters = CharacterSet()
