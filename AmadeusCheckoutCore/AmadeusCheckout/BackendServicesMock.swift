@@ -85,6 +85,10 @@ class BackendServicesMock: BackendServices {
             } else {
                 response = BackendServicesMock.MockData["bin.failure"]
             }
+        case "cancel":
+            response = BackendServicesMock.MockData["load.success"]
+            response?["message"] = [["text":"label_error_abort","type":"error"]]
+            break
         default:
             break
         }

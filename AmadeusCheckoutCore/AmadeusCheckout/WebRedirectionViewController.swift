@@ -84,7 +84,7 @@ class WebRedirectionViewController: UIViewController, WKUIDelegate, WKNavigation
     }
     
     @IBAction func cancel(_ sender: Any) {
-        closeWebViewWithStatus(.cancellation, error: nil)
+        checkRedirectionStatus()
     }
     
     fileprivate func closeWebViewWithStatus(_ status: AMPaymentStatus, error: Error?) {
@@ -156,11 +156,16 @@ class WebRedirectionViewController: UIViewController, WKUIDelegate, WKNavigation
         }
     }
         
-    @objc func checkRedirectionStatus () {        
+    @objc func checkRedirectionStatus () {
         LoadIndicator.sharedInstance.start(self) {
-            self.ctx?.dataModel?.triggerVerify(successHandler: {[weak self] in
+            self.ctx?.dataModel?.checkStatusAfterRedirection(successHandler: {[weak self] isPaymentFinalized in
                 LoadIndicator.sharedInstance.stop() {
-                    self?.closeWebViewWithStatus(.success, error: nil)
+                    if isPaymentFinalized {
+                        self?.closeWebViewWithStatus(.success, error: nil)
+                    } else {
+                        print("WebRedirectionViewController: Payment not finalized after redirection")
+                        self?.closeWebViewWithStatus(.cancellation, error: nil)
+                    }
                 }
             }, failureHandler: {[weak self] error in
                 LoadIndicator.sharedInstance.stop() {[weak self]  in

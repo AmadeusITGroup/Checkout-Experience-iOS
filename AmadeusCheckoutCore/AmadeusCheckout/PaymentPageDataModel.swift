@@ -39,7 +39,6 @@ class PaymentPageDataModel: NSObject {
     private var lastPayload : JSON?
     private var binTableCache = BinTableCache()
     
-    
     init(ppid: String, environement: Environment) {
         self.ppid = ppid
         self.environement = environement
@@ -174,9 +173,14 @@ class PaymentPageDataModel: NSObject {
                 data!["sdk","app_callback_scheme"].string = appCallbackScheme
             case "bin", "obfees":
                 let creditcard = selectedPaymentMethod! as! CreditCardPaymentMethod
+                var creditcardNumber = creditcard.creditCardNumber
                 data = JSON(["mopid": selectedPaymentMethod!.id])
+                if action == "bin" {
+                    let paddedPan = creditcardNumber.padding(toLength: 15, withPad: "9", startingAt: 0)
+                    creditcardNumber = paddedPan + String(LuhnUtils.generateLuhnCheckDigit(paddedPan))
+                }
                 data!["mopdata"] = [
-                    "pan": creditcard.creditCardNumber
+                    "pan": creditcardNumber
                 ]
             
                 if !dynamicVendor || action != "bin" {
@@ -218,13 +222,13 @@ class PaymentPageDataModel: NSObject {
         }
         
         let vendor = dynamicVendor ? "" : creditcard.vendor.id
-        let bin = creditcard.creditCardNumber[0,6]
+        let bin = creditcard.creditCardNumber[0, CCNumValidator.binLength]
 
         let binCallNeeded = !binTableCache.checkCache(bin, vendor,
             validHandler: {[weak self] realVendor in
                 responseHandler(realVendor)
                 if self?.dynamicVendor==true {
-                    let binAfterCheck = creditcard.creditCardNumber[0,6]
+                    let binAfterCheck = creditcard.creditCardNumber[0, CCNumValidator.binLength]
                     if bin==binAfterCheck && creditcard.vendor.id != realVendor.id {
                         creditcard.vendor = realVendor
                     }
@@ -233,7 +237,7 @@ class PaymentPageDataModel: NSObject {
             invalidHandler: {[weak self] _ in
                 responseHandler(nil)
                 if self?.dynamicVendor==true {
-                    let binAfterCheck = creditcard.creditCardNumber[0,6]
+                    let binAfterCheck = creditcard.creditCardNumber[0, CCNumValidator.binLength]
                     if bin==binAfterCheck && !creditcard.vendor.id.isEmpty {
                         creditcard.vendor = CreditCardVendor(JSON({}))
                     }
@@ -277,15 +281,18 @@ class PaymentPageDataModel: NSObject {
 
     }
     
-    func triggerVerify(successHandler: @escaping ()->Void, failureHandler: @escaping (BackendError)->Void) {
+    func checkStatusAfterRedirection(successHandler: @escaping (_ isPaymentFinalized: Bool)->Void, failureHandler: @escaping (BackendError)->Void) {
         sessionTimeout.preventExpiration = true
-    
+        
+        // "load" action will automatically call "cancel" or "verify" action if needed.
         triggerAction("load", successHandler:{
             if self.paymentCompleted == true {
                 // Payment is verified, we can call the success handler
-                successHandler()
+                successHandler(true)
             } else {
-                failureHandler(.technicalUnexpected)
+                // Load was successful, but payment is not finalized, it means user has cancelled the payment.
+                // 'cancel' action has been called automatically if it was needed
+                successHandler(false)
                 self.sessionTimeout.preventExpiration = false
             }
         }, failureHandler:{e in

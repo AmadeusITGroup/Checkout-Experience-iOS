@@ -123,11 +123,11 @@ class ValidatorsTest: XCTestCase {
         clean()
         
         //SET bin corresponding to the vendor but luhn is incorrect
-        cardPaymentMethod.creditCardNumber = "400000"
+        cardPaymentMethod.creditCardNumber = "40000000"
         var expectation = self.expectation(description: "ACCEPT BIN, REJECT LUHN")
         
         //KO: luhn, OK: BIN
-        ccnumValidator.isValid("400000", successHandler: {
+        ccnumValidator.isValid(cardPaymentMethod.creditCardNumber, successHandler: {
             self.accept()
         }, failureHandler: { errorMessage in
             self.reject(errorMessage)
@@ -139,11 +139,11 @@ class ValidatorsTest: XCTestCase {
         clean()
         
         //Change bin to invalid one
-        cardPaymentMethod.creditCardNumber = "555555"
+        cardPaymentMethod.creditCardNumber = "55555555"
         expectation = self.expectation(description: "REJECT BIN")
         
         //KO: BIN
-        ccnumValidator.isValid("555555", successHandler: {
+        ccnumValidator.isValid(cardPaymentMethod.creditCardNumber, successHandler: {
             self.accept()
         }, failureHandler: { errorMessage in
             self.reject(errorMessage)

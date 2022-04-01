@@ -9,6 +9,43 @@
 import Foundation
 
 
+//TODO: Move LuhnUtils class to LuhnUtils.swift file
+class LuhnUtils {
+    static func luhnSum(_ value: String)-> Int {
+        var sum = 0
+        let digitStrings = value.reversed().map { String($0) }
+        for tuple in digitStrings.enumerated() {
+            if let digit = Int(tuple.element) {
+                let odd = tuple.offset % 2 == 1
+                
+                switch (odd, digit) {
+                case (true, 9):
+                    sum += 9
+                case (true, 0...8):
+                    sum += (digit * 2) % 9
+                default:
+                    sum += digit
+                }
+            }
+             else {
+                return -1
+            }
+        }
+        return sum
+    }
+
+    static func luhnCheck(_ value: String) -> Bool {
+        let sum = LuhnUtils.luhnSum(value)
+        return sum >= 0 ? (sum % 10 == 0) : false
+    }
+    
+    static func generateLuhnCheckDigit(_ ccNum: String) -> Int {
+        return (10 - (LuhnUtils.luhnSum(ccNum + "0") % 10))%10;
+    }
+}
+// ----
+
+
 protocol Validator {
     typealias SuccessHandler = ()->Void
     typealias FailureHandler = (_ errorMessage: String)->Void
@@ -77,10 +114,13 @@ enum ValidatorFactory {
  or failureHandler depending on the result of the call.
 
  */
+
+
 class CCNumValidator: Validator {
     
     weak var ctx : AMCheckoutContext?
     var dynamic : Bool
+    static let binLength = 8
     
     init(ctx : AMCheckoutContext, dynamic: Bool) {
         self.ctx = ctx
@@ -95,9 +135,8 @@ class CCNumValidator: Validator {
             failureHandler("mandatory".localize(type: .errorField))
             return
         }
-        
-        // If CC num is shorter than 6, we cannot retrieve or check vendor
-        guard value.count >= 6 else {
+        // If CC num is shorter than 6/8, we cannot retrieve or check vendor
+        guard value.count >= CCNumValidator.binLength else {
             failureHandler("luhn".localize(type: .errorField))
             return
         }
@@ -113,41 +152,18 @@ class CCNumValidator: Validator {
         }
         
         // If CC num doesn't match luhn (for luhn enabled card), or is too short, it's not valid
-        guard  (vendor.hasLuhn && value.count >= 12 && CCNumValidator.luhnCheck(value)) || (!vendor.hasLuhn && value.count >= 8) else {
+        guard  (vendor.hasLuhn && value.count >= 12 && LuhnUtils.luhnCheck(value)) || (!vendor.hasLuhn && value.count >= 8) else {
             failureHandler("luhn".localize(type: .errorField))
             return
         }
         
         successHandler()
-    }
-    
-    private static func luhnCheck(_ value: String) -> Bool{
-        var sum = 0
-        let digitStrings = value.reversed().map { String($0) }
-        for tuple in digitStrings.enumerated() {
-            if let digit = Int(tuple.element) {
-                let odd = tuple.offset % 2 == 1
-                
-                switch (odd, digit) {
-                case (true, 9):
-                    sum += 9
-                case (true, 0...8):
-                    sum += (digit * 2) % 9
-                default:
-                    sum += digit
-                }
-            } else {
-                return false
-            }
-        }
-        return (sum % 10 == 0)
-    }
+    } 
     
     func isValid(_ value: String, successHandler:@escaping SuccessHandler, failureHandler:@escaping FailureHandler) -> Void{
         let creditCardMethod = ctx?.dataModel?.selectedPaymentMethod as? CreditCardPaymentMethod
-    
-        if (value.count < 6) || (!dynamic && creditCardMethod!.vendor.id.isEmpty) {
-            // If CC lenght is shorter than 6, or no vendor is selected in manual mode,
+        if (value.count < CCNumValidator.binLength) || (!dynamic && creditCardMethod!.vendor.id.isEmpty) {
+            // If CC lenght is shorter than 6/8, or no vendor is selected in manual mode,
             // no need for a asynchronous check, we can call staticCheck instead.
             staticCheck(value, nil, successHandler: successHandler, failureHandler: failureHandler)
             if dynamic {
